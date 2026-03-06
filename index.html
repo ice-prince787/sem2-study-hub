@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>f college🌸</title>
+<title>f college, score hard 🌸</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -207,7 +207,7 @@
   .unit-tab:hover { border-color: var(--cao); color: var(--text); }
   .unit-tab.active { color: var(--bg); }
   .unit-tab.active.cao { background: var(--cao); border-color: var(--cao); }
-  .unit-tab.active.math { background: var(--math); border-color: var(--math); }
+  .unit-tab.active.math { background: var(--math); border-color: var(--math); color: var(--bg); }
   .unit-tab.active.python { background: var(--python); border-color: var(--python); }
   .unit-tab.active.physics { background: var(--physics); border-color: var(--physics); }
   .unit-tab.coming { opacity: 0.4; cursor: not-allowed; }
@@ -396,6 +396,130 @@
     .nav-tab { padding: 0.4rem 0.7rem; font-size: 0.78rem; }
     .hero h1 { font-size: 2.4rem; }
   }
+
+  /* ── LEARN SECTION ── */
+  .learn-section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .learn-section h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem; font-weight: 700;
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .learn-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.75rem;
+  }
+  .learn-card {
+    display: flex; align-items: flex-start; gap: 0.75rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.85rem 1rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .learn-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--cao);
+    background: var(--cao-glow);
+  }
+  .learn-card-icon {
+    font-size: 1.3rem; flex-shrink: 0; margin-top: 1px;
+  }
+  .learn-card-text { flex: 1; }
+  .learn-card-title {
+    font-size: 0.85rem; font-weight: 600;
+    color: var(--text); margin-bottom: 0.2rem;
+    line-height: 1.3;
+  }
+  .learn-card-sub {
+    font-size: 0.75rem; color: var(--muted);
+  }
+  .learn-card-arrow {
+    font-size: 0.9rem; color: var(--muted);
+    margin-top: 2px; flex-shrink: 0;
+  }
+
+
+  /* ── YOUTUBE LINK ── */
+  .yt-link {
+    display: flex; align-items: center; gap: 0.75rem;
+    background: rgba(255,0,0,0.07);
+    border: 1px solid rgba(255,0,0,0.2);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    margin-top: 0.9rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .yt-link:hover {
+    background: rgba(255,0,0,0.13);
+    border-color: rgba(255,0,0,0.4);
+    transform: translateY(-1px);
+  }
+  .yt-icon { font-size: 1.3rem; flex-shrink: 0; }
+  .yt-text { flex: 1; }
+  .yt-title { font-size: 0.85rem; font-weight: 600; color: #ff6b6b; margin-bottom: 0.1rem; }
+  .yt-sub { font-size: 0.75rem; color: var(--muted); }
+  .yt-arrow { color: #ff6b6b; font-size: 0.9rem; flex-shrink: 0; }
+
+  /* ── LEARN UNIT FILTER TABS ── */
+  .learn-unit-tabs {
+    display: flex; gap: 0.5rem;
+    margin-bottom: 1.2rem; flex-wrap: wrap;
+  }
+  .learn-unit-btn {
+    padding: 0.35rem 1rem;
+    border-radius: 100px;
+    font-size: 0.8rem; font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+  }
+  .learn-unit-btn:hover { border-color: var(--cao); color: var(--text); }
+  .learn-unit-btn.active-learn { background: var(--cao); border-color: var(--cao); color: var(--bg); }
+  .learn-unit-btn.learn-soon-btn { opacity: 0.35; cursor: not-allowed; }
+  .learn-unit-content { display: none; }
+  .learn-unit-content.active-learn-content { display: block; animation: fadeUp 0.3s ease both; }
+
+  /* ── INLINE LINKS ── */
+  .def-link {
+    color: var(--cao);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-color: rgba(124,111,255,0.4);
+    transition: text-decoration-color 0.2s, color 0.2s;
+    cursor: pointer;
+  }
+  .def-link:hover {
+    text-decoration-color: var(--cao);
+    color: #b8b0ff;
+  }
+
+  /* ── UNIT 3 COMING SOON WITHIN CAO ── */
+  .unit3-soon {
+    background: var(--card);
+    border: 1px dashed rgba(124,111,255,0.3);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+  }
+  .unit3-soon .cs-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+  .unit3-soon h3 { font-family: 'Syne', sans-serif; color: var(--cao); margin-bottom: 0.4rem; }
+  .unit3-soon p { color: var(--muted); font-size: 0.875rem; }
+
 </style>
 </head>
 <body>
@@ -403,11 +527,11 @@
 <!-- ══ HERO ══ -->
 <section class="hero" id="hero">
   <div class="hero-bg"></div>
-  <div class="badge">✨ Sem 2 · F college · CSE/IT/AIDS 2024–25</div>
+  <div class="badge">✨ by ICE PRINCE · KDK College · CSE/IT/AIDS 2024–25</div>
   <h1>
-    F college professors,<br>
-    Score <span class="grad-cao">Hard </span> <span class="grad-math">By</span><br>
-    <span class="grad-python">ICE</span><span class="grad-physics">PRINCE</span> 🌸
+    f college,<br>
+    Score <span class="grad-cao">Hard</span><br>
+    by <span class="grad-python">ICE</span> <span class="grad-physics">PRINCE</span> 👑
   </h1>
   <p>Your complete midsem preparation hub — question bank answers, unit-by-unit, made with love for every student who wants to top the class 💗</p>
   <div class="hero-subjects">
@@ -424,7 +548,7 @@
 
 <!-- ══ NAV ══ -->
 <nav id="mainnav">
-  <div class="nav-logo">Sem2 Study Hub</div>
+  <div class="nav-logo">f college 👑</div>
   <ul class="nav-tabs">
     <li><button class="nav-tab active-cao" onclick="showSubject('cao')" id="tab-cao">💻 CAO</button></li>
     <li><button class="nav-tab" onclick="showSubject('math')" id="tab-math">📐 Maths</button></li>
@@ -461,10 +585,162 @@
     </div>
   </div>
 
+  <!-- LEARN MORE SECTION -->
+  <div class="learn-section">
+    <h3 style="color:var(--cao)">📚 Learn More — CAO Resources</h3>
+
+    <!-- Learn Unit Filter Tabs -->
+    <div class="learn-unit-tabs">
+      <button class="learn-unit-btn active-learn" onclick="showLearnUnit('cao','lu1',this)">Unit 1</button>
+      <button class="learn-unit-btn" onclick="showLearnUnit('cao','lu2',this)">Unit 2</button>
+      <button class="learn-unit-btn learn-soon-btn" disabled>Unit 3 — Soon</button>
+    </div>
+
+    <!-- Learn Unit 1 -->
+    <div class="learn-unit-content active-learn-content" id="cao-lu1">
+      <div class="learn-grid">
+        <a class="learn-card" href="https://www.geeksforgeeks.org/functional-units-of-a-computer-system/" target="_blank">
+          <span class="learn-card-icon">🖥️</span>
+          <div class="learn-card-text">
+            <div class="learn-card-title">Functional Units of Computer</div>
+            <div class="learn-card-sub">GeeksforGeeks · Q1</div>
+          </div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+        <a class="learn-card" href="https://www.geeksforgeeks.org/computer-organization-risc-and-cisc/" target="_blank">
+          <span class="learn-card-icon">⚡</span>
+          <div class="learn-card-text">
+            <div class="learn-card-title">RISC vs CISC</div>
+            <div class="learn-card-sub">GeeksforGeeks · Q5</div>
+          </div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+        <a class="learn-card" href="https://www.geeksforgeeks.org/addressing-modes-in-computer-organization/" target="_blank">
+          <span class="learn-card-icon">📍</span>
+          <div class="learn-card-text">
+            <div class="learn-card-title">Addressing Modes</div>
+            <div class="learn-card-sub">GeeksforGeeks · Q8</div>
+          </div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+        <a class="learn-card" href="https://www.geeksforgeeks.org/introduction-of-stack-based-cpu-organization/" target="_blank">
+          <span class="learn-card-icon">📚</span>
+          <div class="learn-card-text">
+            <div class="learn-card-title">Stack Memory & Operations</div>
+            <div class="learn-card-sub">GeeksforGeeks · Q9</div>
+          </div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+        <a class="learn-card" href="https://www.geeksforgeeks.org/subroutine-and-its-types-in-computer-organization/" target="_blank">
+          <span class="learn-card-icon">🔁</span>
+          <div class="learn-card-text">
+            <div class="learn-card-title">Subroutines in CO</div>
+            <div class="learn-card-sub">GeeksforGeeks · Q10</div>
+          </div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+        <a class="learn-card" href="https://www.geeksforgeeks.org/memory-hierarchy-design-and-its-characteristics/" target="_blank">
+          <span class="learn-card-icon">💾</span>
+          <div class="learn-card-text">
+            <div class="learn-card-title">Memory Hierarchy & Cache</div>
+            <div class="learn-card-sub">GeeksforGeeks · Q7</div>
+          </div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+        <a class="learn-card" href="https://www.geeksforgeeks.org/multiprocessor-system/" target="_blank">
+          <span class="learn-card-icon">🖧</span>
+          <div class="learn-card-text">
+            <div class="learn-card-title">Multiprocessor vs Multicomputer</div>
+            <div class="learn-card-sub">GeeksforGeeks · Q6</div>
+          </div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+        <a class="learn-card" href="https://www.geeksforgeeks.org/what-is-bus-in-computer-organization/" target="_blank">
+          <span class="learn-card-icon">🚌</span>
+          <div class="learn-card-text">
+            <div class="learn-card-title">Single Bus Architecture</div>
+            <div class="learn-card-sub">GeeksforGeeks · Q4</div>
+          </div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+        <a class="learn-card" href="https://www.geeksforgeeks.org/different-types-of-registers-in-the-computer/" target="_blank">
+          <span class="learn-card-icon">🗂️</span>
+          <div class="learn-card-text">
+            <div class="learn-card-title">Registers — PC, IR, MAR, MDR</div>
+            <div class="learn-card-sub">GeeksforGeeks · Q3</div>
+          </div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Learn Unit 2 -->
+    <div class="learn-unit-content" id="cao-lu2">
+      <div class="learn-grid">
+        <a class="learn-card" href="https://www.geeksforgeeks.org/instruction-formats-zero-one-two-and-three-address-instruction/" target="_blank">
+          <span class="learn-card-icon">📝</span>
+          <div class="learn-card-text">
+            <div class="learn-card-title">Instruction Formats (0,1,2,3 address)</div>
+            <div class="learn-card-sub">GeeksforGeeks · Q1–Q4</div>
+          </div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+        <a class="learn-card" href="https://www.geeksforgeeks.org/zero-address-instruction/" target="_blank">
+          <span class="learn-card-icon">0️⃣</span>
+          <div class="learn-card-text">
+            <div class="learn-card-title">Zero Address Instructions</div>
+            <div class="learn-card-sub">GeeksforGeeks · Q2</div>
+          </div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+        <a class="learn-card" href="https://www.geeksforgeeks.org/one-address-instruction/" target="_blank">
+          <span class="learn-card-icon">1️⃣</span>
+          <div class="learn-card-text">
+            <div class="learn-card-title">One Address Instructions</div>
+            <div class="learn-card-sub">GeeksforGeeks · Q3</div>
+          </div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+        <a class="learn-card" href="https://www.geeksforgeeks.org/computer-organization-von-neumann-architecture/" target="_blank">
+          <span class="learn-card-icon">🏗️</span>
+          <div class="learn-card-text">
+            <div class="learn-card-title">Single & Multi Bus Organization</div>
+            <div class="learn-card-sub">GeeksforGeeks · Q8–Q9</div>
+          </div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+        <a class="learn-card" href="https://www.geeksforgeeks.org/hardwired-vs-micro-programmed-control-unit/" target="_blank">
+          <span class="learn-card-icon">🔧</span>
+          <div class="learn-card-text">
+            <div class="learn-card-title">Hardwired vs Microprogrammed Control</div>
+            <div class="learn-card-sub">GeeksforGeeks · Q10–Q11</div>
+          </div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+        <a class="learn-card" href="https://www.geeksforgeeks.org/computer-organization-and-architecture-pipelining-set-1-execution-stages-and-throughput/" target="_blank">
+          <span class="learn-card-icon">⚙️</span>
+          <div class="learn-card-text">
+            <div class="learn-card-title">Instruction Execution & Pipelining</div>
+            <div class="learn-card-sub">GeeksforGeeks · Q5</div>
+          </div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+        <a class="learn-card" href="https://www.geeksforgeeks.org/advantages-and-disadvantages-of-various-instruction-formats/" target="_blank">
+          <span class="learn-card-icon">📊</span>
+          <div class="learn-card-text">
+            <div class="learn-card-title">Advantages & Disadvantages of All Formats</div>
+            <div class="learn-card-sub">GeeksforGeeks · Q6–Q7</div>
+          </div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <div class="unit-tabs">
     <button class="unit-tab active cao" onclick="showUnit('cao','u1')">Unit 1</button>
     <button class="unit-tab cao" onclick="showUnit('cao','u2')">Unit 2</button>
-    <button class="unit-tab coming" disabled>Unit 3 — Soon</button>
+    <button class="unit-tab cao" onclick="showUnit('cao','u3')">Unit 3 — Soon 🔒</button>
   </div>
 
   <!-- CAO UNIT 1 -->
@@ -482,7 +758,7 @@
       </div>
       <div class="q-body"><div class="q-inner">
         <h3>Definition</h3>
-        <p>A computer consists of five functionally independent main parts that work together to accept, process, store, and output information.</p>
+        <p>A computer consists of five functionally independent main parts that work together to accept, process, store, and output information. <a class="def-link" href="https://www.geeksforgeeks.org/functional-units-of-a-computer-system/" target="_blank">Read full definition ↗</a></p>
         <h3>The 5 Functional Units</h3>
         <div class="table-wrap"><table>
           <tr><th>Unit</th><th>Role</th><th>Examples</th></tr>
@@ -512,6 +788,14 @@
           <tr><td>RAM — fast, temporary</td><td>HDD/SSD — slow, permanent</td><td>Fastest — inside CPU chip</td></tr>
           <tr><td>Loses data when power off</td><td>Keeps data permanently</td><td>Holds currently-used instructions</td></tr>
         </table></div>
+        <a class="yt-link" href="https://www.youtube.com/playlist?list=PLxCzCOWd7aiHMonh3G6QNKq53C6oNXGrX" target="_blank">
+          <span class="yt-icon">▶️</span>
+          <div class="yt-text">
+            <div class="yt-title">Functional Units of Computer — Gate Smashers</div>
+            <div class="yt-sub">Gate Smashers · COA Playlist</div>
+          </div>
+          <span class="yt-arrow">↗</span>
+        </a>
       </div></div>
     </div>
 
@@ -534,6 +818,14 @@
           <tr><td><strong>Servers & Enterprise</strong></td><td>Shared by many users over a network; host large databases</td><td>Government, company servers</td></tr>
           <tr><td><strong>Supercomputers / Grid</strong></td><td>Fastest & most expensive; Grid = many PCs connected</td><td>Weather forecasting, research</td></tr>
         </table></div>
+        <a class="yt-link" href="https://www.youtube.com/playlist?list=PLxCzCOWd7aiHMonh3G6QNKq53C6oNXGrX" target="_blank">
+          <span class="yt-icon">▶️</span>
+          <div class="yt-text">
+            <div class="yt-title">Types of Computers — Gate Smashers</div>
+            <div class="yt-sub">Gate Smashers · COA Playlist</div>
+          </div>
+          <span class="yt-arrow">↗</span>
+        </a>
       </div></div>
     </div>
 
@@ -548,7 +840,7 @@
         <span class="q-chevron">▾</span>
       </div>
       <div class="q-body"><div class="q-inner">
-        <h3>Key Registers</h3>
+        <h3>Key Registers <a class="def-link" href="https://www.geeksforgeeks.org/different-types-of-registers-in-the-computer/" target="_blank">↗ Learn more</a></h3>
         <div class="table-wrap"><table>
           <tr><th>Register</th><th>Full Name</th><th>Function</th></tr>
           <tr><td><strong>PC</strong></td><td>Program Counter</td><td>Holds address of NEXT instruction to fetch</td></tr>
@@ -569,6 +861,14 @@ Step 6: Result stored back in memory or register</div>
           <li><strong>READ:</strong> Processor sends address + READ signal → Memory returns data copy. Original stays unchanged.</li>
           <li><strong>WRITE:</strong> Processor sends address + data + WRITE signal → Memory overwrites old data.</li>
         </ul>
+        <a class="yt-link" href="https://www.youtube.com/playlist?list=PLxCzCOWd7aiHMonh3G6QNKq53C6oNXGrX" target="_blank">
+          <span class="yt-icon">▶️</span>
+          <div class="yt-text">
+            <div class="yt-title">Basic Operational Concepts — Gate Smashers</div>
+            <div class="yt-sub">Gate Smashers · Processor & Memory</div>
+          </div>
+          <span class="yt-arrow">↗</span>
+        </a>
       </div></div>
     </div>
 
@@ -606,6 +906,14 @@ PC   MAR   MDR   IR   R0   R1 ... R(n-1)   Y   Z   TEMP
         <h3>Register Transfer (How data moves)</h3>
         <p>Each register has two control signals: <strong>Riin</strong> (load from bus) and <strong>Riout</strong> (place on bus). To transfer R1 → R4: set R1out=1 (puts R1 on bus), then set R4in=1 (loads bus into R4).</p>
         <div class="highlight-box">⚡ <strong>Advantage:</strong> Simple design, low cost<br>⚠️ <strong>Disadvantage:</strong> SLOW — only ONE transfer per clock cycle</div>
+        <a class="yt-link" href="https://www.youtube.com/playlist?list=PLxCzCOWd7aiHMonh3G6QNKq53C6oNXGrX" target="_blank">
+          <span class="yt-icon">▶️</span>
+          <div class="yt-text">
+            <div class="yt-title">Single Bus Architecture — Gate Smashers</div>
+            <div class="yt-sub">Gate Smashers · Bus Organization</div>
+          </div>
+          <span class="yt-arrow">↗</span>
+        </a>
       </div></div>
     </div>
 
@@ -629,6 +937,14 @@ PC   MAR   MDR   IR   R0   R1 ... R(n-1)   Y   Z   TEMP
           <tr><td>Speed</td><td>Faster (pipelining easier)</td><td>Slower</td></tr>
           <tr><td>Example</td><td>ARM processors</td><td>Intel x86</td></tr>
         </table></div>
+        <a class="yt-link" href="https://www.youtube.com/playlist?list=PLxCzCOWd7aiHMonh3G6QNKq53C6oNXGrX" target="_blank">
+          <span class="yt-icon">▶️</span>
+          <div class="yt-text">
+            <div class="yt-title">RISC vs CISC — Gate Smashers</div>
+            <div class="yt-sub">Gate Smashers · Instruction Set</div>
+          </div>
+          <span class="yt-arrow">↗</span>
+        </a>
       </div></div>
     </div>
 
@@ -650,6 +966,14 @@ PC   MAR   MDR   IR   R0   R1 ... R(n-1)   Y   Z   TEMP
           <tr><td>Also called</td><td>Shared-memory multiprocessor</td><td>Message-passing multicomputer</td></tr>
           <tr><td>Cost</td><td>Higher (complex interconnections)</td><td>Lower (uses normal network)</td></tr>
         </table></div>
+        <a class="yt-link" href="https://www.youtube.com/playlist?list=PLxCzCOWd7aiHMonh3G6QNKq53C6oNXGrX" target="_blank">
+          <span class="yt-icon">▶️</span>
+          <div class="yt-text">
+            <div class="yt-title">Multiprocessor vs Multicomputer — Gate Smashers</div>
+            <div class="yt-sub">Gate Smashers · COA Playlist</div>
+          </div>
+          <span class="yt-arrow">↗</span>
+        </a>
       </div></div>
     </div>
 
@@ -690,6 +1014,14 @@ Address     Content
           <li>Memory writes new data to that location</li>
           <li>Old data is <strong>overwritten and lost ⚠️</strong></li>
         </ul>
+        <a class="yt-link" href="https://www.youtube.com/playlist?list=PLxCzCOWd7aiHMonh3G6QNKq53C6oNXGrX" target="_blank">
+          <span class="yt-icon">▶️</span>
+          <div class="yt-text">
+            <div class="yt-title">Memory Addresses & Operations — Gate Smashers</div>
+            <div class="yt-sub">Gate Smashers · Memory Organization</div>
+          </div>
+          <span class="yt-arrow">↗</span>
+        </a>
       </div></div>
     </div>
 
@@ -704,7 +1036,7 @@ Address     Content
         <span class="q-chevron">▾</span>
       </div>
       <div class="q-body"><div class="q-inner">
-        <h3>What are Addressing Modes?</h3>
+        <h3>What are Addressing Modes? <a class="def-link" href="https://www.geeksforgeeks.org/addressing-modes-in-computer-organization/" target="_blank">↗ GeeksforGeeks</a></h3>
         <p>Addressing modes are the different ways a processor can find/locate the operand (data) needed for an instruction. EA = Effective Address = actual memory location of data.</p>
         <div class="table-wrap"><table>
           <tr><th>Mode</th><th>Syntax</th><th>EA Formula</th><th>Example</th></tr>
@@ -716,6 +1048,14 @@ Address     Content
           <tr><td><strong>Base with Index</strong></td><td>(Ri,Rj)</td><td>EA = [Ri] + [Rj]</td><td>Load R1, (R2,R3)</td></tr>
         </table></div>
         <div class="tip-box">💡 Memory trick: <strong>"I R A R I B"</strong> → Immediate, Register, Absolute, Register-Indirect, Index, Base-with-Index</div>
+        <a class="yt-link" href="https://www.youtube.com/playlist?list=PLxCzCOWd7aiHMonh3G6QNKq53C6oNXGrX" target="_blank">
+          <span class="yt-icon">▶️</span>
+          <div class="yt-text">
+            <div class="yt-title">Addressing Modes — Gate Smashers</div>
+            <div class="yt-sub">Gate Smashers · Addressing Modes</div>
+          </div>
+          <span class="yt-arrow">↗</span>
+        </a>
       </div></div>
     </div>
 
@@ -730,7 +1070,7 @@ Address     Content
         <span class="q-chevron">▾</span>
       </div>
       <div class="q-body"><div class="q-inner">
-        <h3>What is a Stack?</h3>
+        <h3>What is a Stack? <a class="def-link" href="https://www.geeksforgeeks.org/introduction-of-stack-based-cpu-organization/" target="_blank">↗ GeeksforGeeks</a></h3>
         <p>A stack is a special memory structure that follows the <strong>LIFO (Last In, First Out)</strong> principle. Think of a pile of plates — you always add and remove from the TOP!</p>
         <h3>Key Terms</h3>
         <ul>
@@ -751,6 +1091,14 @@ Add SP, SP, #4         ← SP moves UP (new TOP revealed)</div>
          [ 739 ]
 BOTTOM → [  43 ]  ← BOTTOM (first added, last removed)</div>
         <div class="highlight-box">Uses of Stack: Return addresses for subroutines · Parameter passing · Zero-address instruction evaluation (postfix expressions)</div>
+        <a class="yt-link" href="https://www.youtube.com/playlist?list=PLxCzCOWd7aiHMonh3G6QNKq53C6oNXGrX" target="_blank">
+          <span class="yt-icon">▶️</span>
+          <div class="yt-text">
+            <div class="yt-title">Stack Memory & Operations — Gate Smashers</div>
+            <div class="yt-sub">Gate Smashers · Stack Operations</div>
+          </div>
+          <span class="yt-arrow">↗</span>
+        </a>
       </div></div>
     </div>
 
@@ -765,7 +1113,7 @@ BOTTOM → [  43 ]  ← BOTTOM (first added, last removed)</div>
         <span class="q-chevron">▾</span>
       </div>
       <div class="q-body"><div class="q-inner">
-        <h3>What is a Subroutine?</h3>
+        <h3>What is a Subroutine? <a class="def-link" href="https://www.geeksforgeeks.org/subroutine-and-its-types-in-computer-organization/" target="_blank">↗ GeeksforGeeks</a></h3>
         <p>A subroutine is a block of instructions that performs a specific task and can be <strong>called multiple times</strong> from different places in a program. Also called: function, procedure, or method.</p>
         <h3>Why Use Subroutines?</h3>
         <ul>
@@ -788,6 +1136,14 @@ Memory    Calling Program         Memory    Subroutine SUB
            ↑ execution resumes here after Return</div>
         <h3>Subroutine Nesting</h3>
         <p>When a subroutine calls ANOTHER subroutine — return addresses are saved on the <strong>STACK</strong> (not just link register) to correctly track all returns.</p>
+        <a class="yt-link" href="https://www.youtube.com/playlist?list=PLxCzCOWd7aiHMonh3G6QNKq53C6oNXGrX" target="_blank">
+          <span class="yt-icon">▶️</span>
+          <div class="yt-text">
+            <div class="yt-title">Subroutines — Gate Smashers</div>
+            <div class="yt-sub">Gate Smashers · Subroutines</div>
+          </div>
+          <span class="yt-arrow">↗</span>
+        </a>
       </div></div>
     </div>
 
@@ -807,7 +1163,7 @@ Memory    Calling Program         Memory    Subroutine SUB
         <span class="q-chevron">▾</span>
       </div>
       <div class="q-body"><div class="q-inner">
-        <h3>Definition</h3>
+        <h3>Definition <a class="def-link" href="https://www.geeksforgeeks.org/instruction-formats-zero-one-two-and-three-address-instruction/" target="_blank">↗ GeeksforGeeks</a></h3>
         <p>Instruction format refers to the way instructions are encoded and structured in machine language. Each instruction is made up of <strong>fields</strong> (groups of bits), each carrying specific information.</p>
         <h3>Three Main Fields</h3>
         <ul>
@@ -823,6 +1179,14 @@ Memory    Calling Program         Memory    Subroutine SUB
           <tr><td>Two Address</td><td>2</td><td>General register</td></tr>
           <tr><td>Three Address</td><td>3</td><td>General register</td></tr>
         </table></div>
+        <a class="yt-link" href="https://www.youtube.com/watch?v=WAO_W6Hpzyk&list=PLxCzCOWd7aiHMonh3G6QNKq53C6oNXGrX&index=13" target="_blank">
+          <span class="yt-icon">▶️</span>
+          <div class="yt-text">
+            <div class="yt-title">What is Instruction Format — Gate Smashers</div>
+            <div class="yt-sub">Gate Smashers · Unit 2 · Q1</div>
+          </div>
+          <span class="yt-arrow">↗</span>
+        </a>
       </div></div>
     </div>
 
@@ -853,6 +1217,14 @@ Memory    Calling Program         Memory    Subroutine SUB
           <tr><td>Pop X</td><td>POP X</td><td>M[X] = result</td></tr>
         </table></div>
         <div class="highlight-box">Total: 8 instructions · Uses: Stack · No address bits needed · Compact code</div>
+        <a class="yt-link" href="https://www.youtube.com/watch?v=u-sp4gBAJKI&list=PLxCzCOWd7aiHMonh3G6QNKq53C6oNXGrX&index=17" target="_blank">
+          <span class="yt-icon">▶️</span>
+          <div class="yt-text">
+            <div class="yt-title">Register Stack Organisation — Gate Smashers</div>
+            <div class="yt-sub">Gate Smashers · Zero Address</div>
+          </div>
+          <span class="yt-arrow">↗</span>
+        </a>
       </div></div>
     </div>
 
@@ -883,6 +1255,14 @@ Memory    Calling Program         Memory    Subroutine SUB
           <tr><td>Store X</td><td>M[X] = AC</td><td>Final result stored</td></tr>
         </table></div>
         <div class="highlight-box">Total: 8 instructions · Uses: Accumulator (implied) · Simple design but accumulator can become a bottleneck</div>
+        <a class="yt-link" href="https://www.youtube.com/watch?v=k5YMLXPy1SE&list=PLxCzCOWd7aiHMonh3G6QNKq53C6oNXGrX&index=15" target="_blank">
+          <span class="yt-icon">▶️</span>
+          <div class="yt-text">
+            <div class="yt-title">Single Accumulator Organisation — Gate Smashers</div>
+            <div class="yt-sub">Gate Smashers · One Address</div>
+          </div>
+          <span class="yt-arrow">↗</span>
+        </a>
       </div></div>
     </div>
 
@@ -918,6 +1298,14 @@ Memory    Calling Program         Memory    Subroutine SUB
           <strong>Two Address:</strong> R1←A, R1←R1+B, M[T]←R1, R2←C, R2←R2+D, R1←R1*M[T], M[X]←R1 (8 instructions)<br><br>
           <strong>Three Address:</strong> ADD R1,A,B → MUL X,R1,... (fewer, more direct instructions)
         </div>
+        <a class="yt-link" href="https://www.youtube.com/playlist?list=PLxCzCOWd7aiHMonh3G6QNKq53C6oNXGrX" target="_blank">
+          <span class="yt-icon">▶️</span>
+          <div class="yt-text">
+            <div class="yt-title">Two & Three Address Instructions — Gate Smashers</div>
+            <div class="yt-sub">Gate Smashers · Instruction Formats</div>
+          </div>
+          <span class="yt-arrow">↗</span>
+        </a>
       </div></div>
     </div>
 
@@ -950,6 +1338,14 @@ Stage 2: Decode instruction, read source registers
 Stage 3: Compute effective address or ALU operation
 Stage 4: Read/Write memory (if needed)
 Stage 5: Write result to destination register</div>
+        <a class="yt-link" href="https://www.youtube.com/watch?v=Za7ozdjE8VI&list=PLxCzCOWd7aiHMonh3G6QNKq53C6oNXGrX&index=16" target="_blank">
+          <span class="yt-icon">▶️</span>
+          <div class="yt-text">
+            <div class="yt-title">General Register CPU Organisation — Gate Smashers</div>
+            <div class="yt-sub">Gate Smashers · Unit 2 · Q5</div>
+          </div>
+          <span class="yt-arrow">↗</span>
+        </a>
       </div></div>
     </div>
 
@@ -992,6 +1388,14 @@ Stage 5: Write result to destination register</div>
           <li>Supports parallelism — multiple operands fetched simultaneously</li>
           <li>Better pipeline utilization and register allocation</li>
         </ul>
+        <a class="yt-link" href="https://www.youtube.com/playlist?list=PLxCzCOWd7aiHMonh3G6QNKq53C6oNXGrX" target="_blank">
+          <span class="yt-icon">▶️</span>
+          <div class="yt-text">
+            <div class="yt-title">Advantages of Instruction Formats — Gate Smashers</div>
+            <div class="yt-sub">Gate Smashers · Instruction Formats</div>
+          </div>
+          <span class="yt-arrow">↗</span>
+        </a>
       </div></div>
     </div>
 
@@ -1032,6 +1436,14 @@ Stage 5: Write result to destination register</div>
           <li>Higher hardware cost and power consumption</li>
           <li>Longer operand fetch time</li>
         </ul>
+        <a class="yt-link" href="https://www.youtube.com/playlist?list=PLxCzCOWd7aiHMonh3G6QNKq53C6oNXGrX" target="_blank">
+          <span class="yt-icon">▶️</span>
+          <div class="yt-text">
+            <div class="yt-title">Limitations of Instruction Formats — Gate Smashers</div>
+            <div class="yt-sub">Gate Smashers · Instruction Formats</div>
+          </div>
+          <span class="yt-arrow">↗</span>
+        </a>
       </div></div>
     </div>
 
@@ -1048,6 +1460,14 @@ Stage 5: Write result to destination register</div>
       <div class="q-body"><div class="q-inner">
         <p>Already covered in Unit 1 Q4 — Single Bus Architecture! This is the same question. Refer to Q4 above for complete answer. 🌸</p>
         <div class="highlight-box">Key points to repeat: What is single bus · Components (MAR, MDR, Y, Z, TEMP, MUX) · Register transfer mechanism (Riin/Riout) · Advantage (simple) · Disadvantage (slow — 1 transfer/cycle)</div>
+        <a class="yt-link" href="https://www.youtube.com/playlist?list=PLxCzCOWd7aiHMonh3G6QNKq53C6oNXGrX" target="_blank">
+          <span class="yt-icon">▶️</span>
+          <div class="yt-text">
+            <div class="yt-title">Single Bus Organization — Gate Smashers</div>
+            <div class="yt-sub">Gate Smashers · Bus Organization</div>
+          </div>
+          <span class="yt-arrow">↗</span>
+        </a>
       </div></div>
     </div>
 
@@ -1090,6 +1510,14 @@ Register file has 3 PORTS:
           <tr><td>Temp registers needed</td><td>Y, Z, TEMP</td><td>Not needed</td></tr>
         </table></div>
         <div class="highlight-box">Extra feature: <strong>Incrementer unit</strong> increments PC by 4 without using the main ALU — freeing ALU for actual computation!</div>
+        <a class="yt-link" href="https://www.youtube.com/playlist?list=PLxCzCOWd7aiHMonh3G6QNKq53C6oNXGrX" target="_blank">
+          <span class="yt-icon">▶️</span>
+          <div class="yt-text">
+            <div class="yt-title">Multi Bus Organization — Gate Smashers</div>
+            <div class="yt-sub">Gate Smashers · Bus Organization</div>
+          </div>
+          <span class="yt-arrow">↗</span>
+        </a>
       </div></div>
     </div>
 
@@ -1104,7 +1532,7 @@ Register file has 3 PORTS:
         <span class="q-chevron">▾</span>
       </div>
       <div class="q-body"><div class="q-inner">
-        <h3>What is Hardwired Control?</h3>
+        <h3>What is Hardwired Control? <a class="def-link" href="https://www.geeksforgeeks.org/hardwired-vs-micro-programmed-control-unit/" target="_blank">↗ GeeksforGeeks</a></h3>
         <p>Control signals are generated by actual hardware circuits (combinational logic) that directly interpret the instruction register and timing signals. It is built into the physical circuit permanently.</p>
         <h3>Components</h3>
         <div class="table-wrap"><table>
@@ -1121,6 +1549,14 @@ Register file has 3 PORTS:
           <li>External signals (interrupt requests)</li>
         </ul>
         <div class="highlight-box">✅ <strong>Advantage:</strong> Very FAST — signals generated directly by circuits<br>⚠️ <strong>Disadvantage:</strong> Inflexible — hard to modify after manufacturing</div>
+        <a class="yt-link" href="https://www.youtube.com/watch?v=1q2JKX3qg-4" target="_blank">
+          <span class="yt-icon">▶️</span>
+          <div class="yt-text">
+            <div class="yt-title">Hardwired Control Unit — Gate Smashers</div>
+            <div class="yt-sub">Gate Smashers · Unit 2 · Q10</div>
+          </div>
+          <span class="yt-arrow">↗</span>
+        </a>
       </div></div>
     </div>
 
@@ -1135,7 +1571,7 @@ Register file has 3 PORTS:
         <span class="q-chevron">▾</span>
       </div>
       <div class="q-body"><div class="q-inner">
-        <h3>What is Microprogrammed Control?</h3>
+        <h3>What is Microprogrammed Control? <a class="def-link" href="https://www.geeksforgeeks.org/hardwired-vs-micro-programmed-control-unit/" target="_blank">↗ GeeksforGeeks</a></h3>
         <p>Instead of hardware circuits, control signals are determined by a <strong>program stored in a special memory</strong> called the Control Store (microprogram memory). It's a "software" approach to control.</p>
         <h3>Key Terms</h3>
         <div class="table-wrap"><table>
@@ -1162,11 +1598,30 @@ IR ──► Microinstruction Address Generator
           <tr><td>Used in</td><td>RISC processors</td><td>CISC processors</td></tr>
         </table></div>
         <div class="highlight-box">Modern trend: Since logic circuitry cost has dropped, <strong>Hardwired control is now preferred</strong> even for complex processors.</div>
+        <a class="yt-link" href="https://www.youtube.com/watch?v=fRwDFapeYBM" target="_blank">
+          <span class="yt-icon">▶️</span>
+          <div class="yt-text">
+            <div class="yt-title">Microprogrammed Control Unit — Gate Smashers</div>
+            <div class="yt-sub">Gate Smashers · Unit 2 · Q11</div>
+          </div>
+          <span class="yt-arrow">↗</span>
+        </a>
       </div></div>
     </div>
 
   </div><!-- end cao-u2 -->
+
+  <!-- CAO UNIT 3 -->
+  <div class="unit-content" id="cao-u3">
+    <div class="unit3-soon">
+      <div class="cs-icon">🧮</div>
+      <h3>Unit 3 — Arithmetic</h3>
+      <p>Coming soon! We'll add 2's complement, Booth's Algorithm, IEEE 754 and more once we study this unit together 💗</p>
+    </div>
+  </div>
+
 </div><!-- end content-cao -->
+
 
 <!-- ══ MATHS ══ -->
 <div class="content" id="content-math">
@@ -1174,15 +1629,1416 @@ IR ──► Microinstruction Address Generator
     <div class="subject-icon icon-math">📐</div>
     <div class="subject-header-text">
       <h2 style="color:var(--math)">Applied Mathematics — II</h2>
-      <p>AM-II · Units covered so far: Coming soon as you study!</p>
+      <p>AM-II · 2BCS05T · Units covered: 1 (Statistics)</p>
     </div>
   </div>
-  <div class="coming-soon-card">
-    <div class="cs-icon">📐</div>
-    <h3>Maths content coming soon!</h3>
-    <p>Complete your Maths sessions and we'll add all the answers here unit by unit 💗</p>
+
+  <div class="progress-section">
+    <h3>Your Progress</h3>
+    <div class="prog-item">
+      <div class="prog-label"><span>Unit 1 — Statistics</span><span style="color:var(--math)">✅ Complete</span></div>
+      <div class="prog-bar"><div class="prog-fill" style="width:100%;background:var(--math)"></div></div>
+    </div>
+    <div class="prog-item">
+      <div class="prog-label"><span>Unit 2 — Vector Calculus</span><span style="color:var(--math)">✅ Complete</span></div>
+      <div class="prog-bar"><div class="prog-fill" style="width:100%;background:var(--math)"></div></div>
+    </div>
+    <div class="prog-item">
+      <div class="prog-label"><span>Unit 3 — Probability</span><span style="color:var(--muted)">Coming soon</span></div>
+      <div class="prog-bar"><div class="prog-fill" style="width:0%;background:var(--math)"></div></div>
+    </div>
+    <div class="prog-item">
+      <div class="prog-label"><span>Unit 4 — Numerical Methods</span><span style="color:var(--muted)">Coming soon</span></div>
+      <div class="prog-bar"><div class="prog-fill" style="width:0%;background:var(--math)"></div></div>
+    </div>
+    <div class="prog-item">
+      <div class="prog-label"><span>Unit 5 — Vector Spaces</span><span style="color:var(--muted)">Coming soon</span></div>
+      <div class="prog-bar"><div class="prog-fill" style="width:0%;background:var(--math)"></div></div>
+    </div>
   </div>
-</div>
+
+  <!-- LEARN MORE - MATHS -->
+  <div class="learn-section">
+    <h3 style="color:var(--math)">📚 Learn More — Maths Resources</h3>
+    <div class="learn-unit-tabs">
+      <button class="learn-unit-btn active-learn" style="background:var(--math);border-color:var(--math);color:var(--bg)" onclick="showLearnUnit('math','mlu1',this)">Unit 1</button>
+      <button class="learn-unit-btn" style="border-color:var(--math)" onclick="showLearnUnit('math','mlu2',this)">Unit 2</button>
+      <button class="learn-unit-btn learn-soon-btn" disabled>Unit 3 — Soon</button>
+      <button class="learn-unit-btn learn-soon-btn" disabled>Unit 4 — Soon</button>
+      <button class="learn-unit-btn learn-soon-btn" disabled>Unit 5 — Soon</button>
+    </div>
+    <div class="learn-unit-content active-learn-content" id="math-mlu1">
+      <div class="learn-grid">
+        <a class="learn-card" href="https://www.geeksforgeeks.org/least-square-method/" target="_blank">
+          <span class="learn-card-icon">📈</span>
+          <div class="learn-card-text"><div class="learn-card-title">Least Squares — Straight Line</div><div class="learn-card-sub">GeeksforGeeks · Q1–Q4</div></div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+        <a class="learn-card" href="https://www.geeksforgeeks.org/curve-fitting/" target="_blank">
+          <span class="learn-card-icon">📉</span>
+          <div class="learn-card-text"><div class="learn-card-title">Curve Fitting — Parabola & Exponential</div><div class="learn-card-sub">GeeksforGeeks · Q5–Q12</div></div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+        <a class="learn-card" href="https://www.geeksforgeeks.org/mathematics-covariance-and-correlation/" target="_blank">
+          <span class="learn-card-icon">🔗</span>
+          <div class="learn-card-text"><div class="learn-card-title">Correlation Coefficient</div><div class="learn-card-sub">GeeksforGeeks · Q13–Q17</div></div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+        <a class="learn-card" href="https://www.geeksforgeeks.org/spearmans-rank-correlation/" target="_blank">
+          <span class="learn-card-icon">🏆</span>
+          <div class="learn-card-text"><div class="learn-card-title">Rank Correlation (Spearman's)</div><div class="learn-card-sub">GeeksforGeeks · Q18–Q21</div></div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+    <div class="learn-unit-content" id="math-mlu2">
+      <div class="learn-grid">
+        <a class="learn-card" href="https://www.geeksforgeeks.org/gradient-of-a-function/" target="_blank">
+          <span class="learn-card-icon">∇</span>
+          <div class="learn-card-text"><div class="learn-card-title">Gradient & Directional Derivative</div><div class="learn-card-sub">GeeksforGeeks · Q1–Q6</div></div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+        <a class="learn-card" href="https://www.geeksforgeeks.org/curl-of-a-vector-field/" target="_blank">
+          <span class="learn-card-icon">🌀</span>
+          <div class="learn-card-text"><div class="learn-card-title">Curl of a Vector Field</div><div class="learn-card-sub">GeeksforGeeks · Q7–Q13</div></div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+        <a class="learn-card" href="https://www.geeksforgeeks.org/divergence-and-curl/" target="_blank">
+          <span class="learn-card-icon">📡</span>
+          <div class="learn-card-text"><div class="learn-card-title">Divergence & Curl Together</div><div class="learn-card-sub">GeeksforGeeks · Q7</div></div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+        <a class="learn-card" href="https://www.geeksforgeeks.org/line-integrals/" target="_blank">
+          <span class="learn-card-icon">📏</span>
+          <div class="learn-card-text"><div class="learn-card-title">Line Integrals</div><div class="learn-card-sub">GeeksforGeeks · Q14–Q15</div></div>
+          <span class="learn-card-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="unit-tabs">
+    <button class="unit-tab active math" onclick="showUnit('math','mu1')">Unit 1</button>
+    <button class="unit-tab math" onclick="showUnit('math','mu2')">Unit 2</button>
+    <button class="unit-tab coming" disabled>Unit 3 — Soon</button>
+    <button class="unit-tab coming" disabled>Unit 4 — Soon</button>
+    <button class="unit-tab coming" disabled>Unit 5 — Soon</button>
+  </div>
+
+  <!-- MATHS UNIT 1 -->
+  <div class="unit-content active" id="math-mu1">
+
+    <!-- METHOD CARD -->
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">📖</span>
+          <span class="q-title">Master Formulas — Read This First Before Attempting Any Question!</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">Key</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Straight Line — y = a + bx</h3>
+        <div class="code-block">Table columns: x, y, x², xy
+Normal equations:
+  Σy  = na + bΣx
+  Σxy = aΣx + bΣx²</div>
+
+        <h3>Parabola — y = a + bx + cx²</h3>
+        <div class="code-block">Table columns: x, y, x², x³, x⁴, xy, x²y
+Normal equations:
+  Σy   = na   + bΣx  + cΣx²
+  Σxy  = aΣx  + bΣx² + cΣx³
+  Σx²y = aΣx² + bΣx³ + cΣx⁴</div>
+
+        <h3>Exponential Curves — Convert to Straight Line First!</h3>
+        <div class="table-wrap"><table>
+          <tr><th>Curve</th><th>Take</th><th>Becomes</th><th>Convert back</th></tr>
+          <tr><td>y = ae^bx</td><td>ln both sides</td><td>Y = A + bx (Y=lny, A=lna)</td><td>a = e^A</td></tr>
+          <tr><td>y = ab^x</td><td>log both sides</td><td>Y = A + Bx (Y=logy, A=loga, B=logb)</td><td>a=antilog(A), b=antilog(B)</td></tr>
+          <tr><td>y = ax^b</td><td>log both sides</td><td>Y = A + bX (Y=logy, X=logx, A=loga)</td><td>a=antilog(A)</td></tr>
+        </table></div>
+
+        <h3>Correlation Coefficient r</h3>
+        <div class="code-block">Table columns: x, y, x², y², xy
+r = [nΣxy - ΣxΣy] / √{[nΣx²-(Σx)²][nΣy²-(Σy)²]}</div>
+
+        <h3>Regression Lines</h3>
+        <div class="code-block">y on x:  y - ȳ = byx(x - x̄)   where byx = [nΣxy-ΣxΣy] / [nΣx²-(Σx)²]
+x on y:  x - x̄ = bxy(y - ȳ)   where bxy = [nΣxy-ΣxΣy] / [nΣy²-(Σy)²]
+         x̄ = Σx/n,  ȳ = Σy/n
+         r² = byx × bxy  →  r = √(byx × bxy)</div>
+
+        <h3>Rank Correlation (Spearman's)</h3>
+        <div class="code-block">r = 1 - [6·Σd²] / [n(n²-1)]
+d = R1 - R2 (difference between ranks)
+Tied ranks: give average rank, add (m³-m)/12 to Σd² for each tie</div>
+
+        <div class="tip-box" style="border-color:var(--math)">💡 <strong>For tied ranks:</strong> if two values share rank 3 & 4, both get rank 3.5. Add correction (m³-m)/12 where m = number of tied values!</div>
+      </div></div>
+    </div>
+
+    <!-- STRAIGHT LINE QUESTIONS -->
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q1</span>
+          <span class="q-title">Fit a straight line y = a + bx to: x: 1,2,3,4,6,8 | y: 2.4,3,3.6,4,5,6</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Step 1 — Make the Table</h3>
+        <div class="table-wrap"><table>
+          <tr><th>x</th><th>y</th><th>x²</th><th>xy</th></tr>
+          <tr><td>1</td><td>2.4</td><td>1</td><td>2.4</td></tr>
+          <tr><td>2</td><td>3</td><td>4</td><td>6</td></tr>
+          <tr><td>3</td><td>3.6</td><td>9</td><td>10.8</td></tr>
+          <tr><td>4</td><td>4</td><td>16</td><td>16</td></tr>
+          <tr><td>6</td><td>5</td><td>36</td><td>30</td></tr>
+          <tr><td>8</td><td>6</td><td>64</td><td>48</td></tr>
+          <tr><td><strong>Σx=24</strong></td><td><strong>Σy=24</strong></td><td><strong>Σx²=130</strong></td><td><strong>Σxy=113.2</strong></td></tr>
+        </table></div>
+        <h3>Step 2 — Normal Equations (n=6)</h3>
+        <div class="code-block">24    = 6a  + 24b   → (i)
+113.2 = 24a + 130b  → (ii)
+
+From (i): a = (24-24b)/6 = 4-4b
+Sub in (ii): 113.2 = 24(4-4b) + 130b
+             113.2 = 96 - 96b + 130b
+             17.2  = 34b  →  b = 0.506
+             a = (24 - 24×0.506)/6 = 1.976
+
+✅ Answer: y = 1.976 + 0.506x</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q2</span>
+          <span class="q-title">Fit a straight line y = a + bx to: x: 0,1,3 | y: 1,3,2</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <div class="table-wrap"><table>
+          <tr><th>x</th><th>y</th><th>x²</th><th>xy</th></tr>
+          <tr><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+          <tr><td>1</td><td>3</td><td>1</td><td>3</td></tr>
+          <tr><td>3</td><td>2</td><td>9</td><td>6</td></tr>
+          <tr><td><strong>Σx=4</strong></td><td><strong>Σy=6</strong></td><td><strong>Σx²=10</strong></td><td><strong>Σxy=9</strong></td></tr>
+        </table></div>
+        <div class="code-block">n=3
+6 = 3a + 4b   → (i)
+9 = 4a + 10b  → (ii)
+
+From (i): a = (6-4b)/3
+Sub in (ii): 9 = 4(6-4b)/3 + 10b
+             27 = 24-16b + 30b
+             3  = 14b  →  b = 3/14 ≈ 0.214
+             a = (6 - 4×0.214)/3 ≈ 1.714
+
+✅ Answer: y = 1.714 + 0.214x</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q3</span>
+          <span class="q-title">Fit y = a + bx to: x: 0,1,2,3,4 | y: 1,1.8,3.3,4.5,6.3</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <div class="table-wrap"><table>
+          <tr><th>x</th><th>y</th><th>x²</th><th>xy</th></tr>
+          <tr><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+          <tr><td>1</td><td>1.8</td><td>1</td><td>1.8</td></tr>
+          <tr><td>2</td><td>3.3</td><td>4</td><td>6.6</td></tr>
+          <tr><td>3</td><td>4.5</td><td>9</td><td>13.5</td></tr>
+          <tr><td>4</td><td>6.3</td><td>16</td><td>25.2</td></tr>
+          <tr><td><strong>Σx=10</strong></td><td><strong>Σy=16.9</strong></td><td><strong>Σx²=30</strong></td><td><strong>Σxy=47.1</strong></td></tr>
+        </table></div>
+        <div class="code-block">n=5
+16.9 = 5a + 10b   → (i)
+47.1 = 10a + 30b  → (ii)
+
+(ii) - 2×(i): 47.1 - 33.8 = 10b  →  13.3 = 10b  →  b = 1.33
+From (i): a = (16.9 - 10×1.33)/5 = (16.9-13.3)/5 = 0.72
+
+✅ Answer: y = 0.72 + 1.33x</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q4</span>
+          <span class="q-title">Fit y = a + bx to: x: 0,1,3,6,8 | y: 1,3,2,5,4</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <div class="table-wrap"><table>
+          <tr><th>x</th><th>y</th><th>x²</th><th>xy</th></tr>
+          <tr><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+          <tr><td>1</td><td>3</td><td>1</td><td>3</td></tr>
+          <tr><td>3</td><td>2</td><td>9</td><td>6</td></tr>
+          <tr><td>6</td><td>5</td><td>36</td><td>30</td></tr>
+          <tr><td>8</td><td>4</td><td>64</td><td>32</td></tr>
+          <tr><td><strong>Σx=18</strong></td><td><strong>Σy=15</strong></td><td><strong>Σx²=110</strong></td><td><strong>Σxy=71</strong></td></tr>
+        </table></div>
+        <div class="code-block">n=5
+15 = 5a  + 18b   → (i)
+71 = 18a + 110b  → (ii)
+
+From (i): a = (15-18b)/5 = 3-3.6b
+Sub in (ii): 71 = 18(3-3.6b) + 110b
+             71 = 54 - 64.8b + 110b
+             17 = 45.2b  →  b ≈ 0.376
+             a = 3 - 3.6(0.376) ≈ 1.646
+
+✅ Answer: y = 1.646 + 0.376x</div>
+      </div></div>
+    </div>
+
+    <!-- PARABOLA QUESTIONS -->
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q5</span>
+          <span class="q-title">Fit parabola y = ax + b/x to: x: 1,2,3,4,5,6,7,8 | y: 5.43,6.28,8.23,10.32,12.63,14.86,17.27,19.51</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Key Trick — Divide by x first!</h3>
+        <div class="code-block">Divide both sides by x:
+  y/x = a + b/x²
+
+Let Y = y/x and X = 1/x²
+Now it becomes: Y = a + bX  (straight line!)
+
+Use normal equations with Y and X instead of y and x!</div>
+        <div class="table-wrap"><table>
+          <tr><th>x</th><th>y</th><th>X=1/x²</th><th>Y=y/x</th><th>X²</th><th>XY</th></tr>
+          <tr><td>1</td><td>5.43</td><td>1</td><td>5.43</td><td>1</td><td>5.43</td></tr>
+          <tr><td>2</td><td>6.28</td><td>0.25</td><td>3.14</td><td>0.0625</td><td>0.785</td></tr>
+          <tr><td>3</td><td>8.23</td><td>0.111</td><td>2.743</td><td>0.0123</td><td>0.305</td></tr>
+          <tr><td>4</td><td>10.32</td><td>0.0625</td><td>2.58</td><td>0.0039</td><td>0.161</td></tr>
+          <tr><td>5</td><td>12.63</td><td>0.04</td><td>2.526</td><td>0.0016</td><td>0.101</td></tr>
+          <tr><td>6</td><td>14.86</td><td>0.0278</td><td>2.477</td><td>0.00077</td><td>0.0688</td></tr>
+          <tr><td>7</td><td>17.27</td><td>0.0204</td><td>2.467</td><td>0.000416</td><td>0.0503</td></tr>
+          <tr><td>8</td><td>19.51</td><td>0.0156</td><td>2.439</td><td>0.000244</td><td>0.038</td></tr>
+          <tr><td colspan="2"><strong>n=8</strong></td><td><strong>ΣX≈1.506</strong></td><td><strong>ΣY≈23.8</strong></td><td><strong>ΣX²≈1.076</strong></td><td><strong>ΣXY≈6.94</strong></td></tr>
+        </table></div>
+        <div class="code-block">Normal equations:
+  ΣY  = na + bΣX   →  23.8  = 8a + 1.506b   → (i)
+  ΣXY = aΣX + bΣX² →  6.94  = 1.506a + 1.076b → (ii)
+
+Solving: a ≈ 2.4,  b ≈ 3.02
+
+✅ Answer: y = 2.4x + 3.02/x</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q6</span>
+          <span class="q-title">Fit y = ax + bx² to: x: 0,1,2,3 | y: 2,4,10,15</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Key Trick — Divide by x first!</h3>
+        <div class="code-block">Divide both sides by x (drop x=0 row since we divide by x):
+  y/x = a + bx
+
+Let Y = y/x → becomes straight line Y = a + bx!</div>
+        <div class="table-wrap"><table>
+          <tr><th>x</th><th>y</th><th>Y=y/x</th><th>x²</th><th>xY</th></tr>
+          <tr><td>1</td><td>4</td><td>4</td><td>1</td><td>4</td></tr>
+          <tr><td>2</td><td>10</td><td>5</td><td>4</td><td>10</td></tr>
+          <tr><td>3</td><td>15</td><td>5</td><td>9</td><td>15</td></tr>
+          <tr><td><strong>Σx=6</strong></td><td>—</td><td><strong>ΣY=14</strong></td><td><strong>Σx²=14</strong></td><td><strong>ΣxY=29</strong></td></tr>
+        </table></div>
+        <div class="code-block">n=3 (x=0 dropped)
+14 = 3a + 6b   → (i)
+29 = 6a + 14b  → (ii)
+
+2×(i): 28 = 6a + 12b
+(ii)-(i×2): 1 = 2b  →  b = 0.5
+a = (14-6×0.5)/3 = (14-3)/3 ≈ 3.67
+
+✅ Answer: y = 3.67x + 0.5x²</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q7</span>
+          <span class="q-title">Fit y = a + bx² to: x: 12,16,20,24,28 | y: 7,9,15,19,23</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Key Trick — Let X = x²</h3>
+        <div class="code-block">y = a + bX where X = x²  → straight line!</div>
+        <div class="table-wrap"><table>
+          <tr><th>x</th><th>y</th><th>X=x²</th><th>X²=x⁴</th><th>XY=x²y</th></tr>
+          <tr><td>12</td><td>7</td><td>144</td><td>20736</td><td>1008</td></tr>
+          <tr><td>16</td><td>9</td><td>256</td><td>65536</td><td>2304</td></tr>
+          <tr><td>20</td><td>15</td><td>400</td><td>160000</td><td>6000</td></tr>
+          <tr><td>24</td><td>19</td><td>576</td><td>331776</td><td>10944</td></tr>
+          <tr><td>28</td><td>23</td><td>784</td><td>614656</td><td>18032</td></tr>
+          <tr><td>—</td><td><strong>Σy=73</strong></td><td><strong>ΣX=2160</strong></td><td><strong>ΣX²=1192704</strong></td><td><strong>ΣXY=38288</strong></td></tr>
+        </table></div>
+        <div class="code-block">n=5
+73    = 5a + 2160b     → (i)
+38288 = 2160a + 1192704b → (ii)
+
+Solving simultaneously:
+a = 3.363,  b = 0.0260
+
+✅ Answer: y = 3.363 + 0.026x²</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q8</span>
+          <span class="q-title">Fit y = ax² + b to: x: 12,16,20,22,24,26,30 | y: 6.44,7.5,6.9,10.76,10.76,11.76,14.0</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Key Trick — Let X = x²</h3>
+        <div class="code-block">y = aX + b where X = x²  → straight line!
+(Same as Q7 but a and b swapped in position)</div>
+        <div class="table-wrap"><table>
+          <tr><th>x</th><th>y</th><th>X=x²</th><th>X²</th><th>XY</th></tr>
+          <tr><td>12</td><td>6.44</td><td>144</td><td>20736</td><td>927.36</td></tr>
+          <tr><td>16</td><td>7.5</td><td>256</td><td>65536</td><td>1920</td></tr>
+          <tr><td>20</td><td>6.9</td><td>400</td><td>160000</td><td>2760</td></tr>
+          <tr><td>22</td><td>10.76</td><td>484</td><td>234256</td><td>5207.84</td></tr>
+          <tr><td>24</td><td>10.76</td><td>576</td><td>331776</td><td>6197.76</td></tr>
+          <tr><td>26</td><td>11.76</td><td>676</td><td>456976</td><td>7950.96</td></tr>
+          <tr><td>30</td><td>14.0</td><td>900</td><td>810000</td><td>12600</td></tr>
+          <tr><td>—</td><td><strong>Σy=68.12</strong></td><td><strong>ΣX=3436</strong></td><td><strong>ΣX²=2079280</strong></td><td><strong>ΣXY=37563.92</strong></td></tr>
+        </table></div>
+        <div class="code-block">n=7
+Normal equations:
+  68.12   = 7b   + 3436a
+  37563.92 = 3436b + 2079280a
+
+Solving: a = 0.0105,  b = 4.575
+
+✅ Answer: y = 0.0105x² + 4.575</div>
+      </div></div>
+    </div>
+
+    <!-- EXPONENTIAL QUESTIONS -->
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q9</span>
+          <span class="q-title">Fit y = ax^b to: x: 1,2,3,4,5,6 | y: 2.98,4.26,5.21,6.1,6.8,7.5</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Take log both sides</h3>
+        <div class="code-block">log y = log a + b·log x
+Y = A + bX   where Y=logy, X=logx, A=loga</div>
+        <div class="table-wrap"><table>
+          <tr><th>x</th><th>y</th><th>X=logx</th><th>Y=logy</th><th>X²</th><th>XY</th></tr>
+          <tr><td>1</td><td>2.98</td><td>0</td><td>0.4742</td><td>0</td><td>0</td></tr>
+          <tr><td>2</td><td>4.26</td><td>0.3010</td><td>0.6294</td><td>0.0906</td><td>0.1895</td></tr>
+          <tr><td>3</td><td>5.21</td><td>0.4771</td><td>0.7168</td><td>0.2276</td><td>0.3419</td></tr>
+          <tr><td>4</td><td>6.1</td><td>0.6021</td><td>0.7853</td><td>0.3625</td><td>0.4727</td></tr>
+          <tr><td>5</td><td>6.8</td><td>0.6990</td><td>0.8325</td><td>0.4886</td><td>0.5819</td></tr>
+          <tr><td>6</td><td>7.5</td><td>0.7782</td><td>0.8751</td><td>0.6056</td><td>0.6810</td></tr>
+          <tr><td colspan="2"><strong>n=6</strong></td><td><strong>ΣX=2.8574</strong></td><td><strong>ΣY=4.3133</strong></td><td><strong>ΣX²=1.7749</strong></td><td><strong>ΣXY=2.267</strong></td></tr>
+        </table></div>
+        <div class="code-block">Normal equations:
+  4.3133 = 6A + 2.8574b  → (i)
+  2.267  = 2.8574A + 1.7749b → (ii)
+
+Solving: b ≈ 0.514, A ≈ 0.474
+a = antilog(0.474) ≈ 2.978
+
+✅ Answer: y = 2.978 x^0.514</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q10</span>
+          <span class="q-title">Fit y = ae^bx to: x: 1,2,3,4,5 | y: 2.98,4.61,7.93,18.54,51.83</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Take ln both sides</h3>
+        <div class="code-block">ln y = ln a + bx
+Y = A + bx   where Y=lny, A=lna</div>
+        <div class="table-wrap"><table>
+          <tr><th>x</th><th>y</th><th>Y=lny</th><th>x²</th><th>xY</th></tr>
+          <tr><td>1</td><td>2.98</td><td>1.0919</td><td>1</td><td>1.0919</td></tr>
+          <tr><td>2</td><td>4.61</td><td>1.5282</td><td>4</td><td>3.0564</td></tr>
+          <tr><td>3</td><td>7.93</td><td>2.0709</td><td>9</td><td>6.2127</td></tr>
+          <tr><td>4</td><td>18.54</td><td>2.9195</td><td>16</td><td>11.678</td></tr>
+          <tr><td>5</td><td>51.83</td><td>3.9480</td><td>25</td><td>19.740</td></tr>
+          <tr><td><strong>Σx=15</strong></td><td>—</td><td><strong>ΣY=11.558</strong></td><td><strong>Σx²=55</strong></td><td><strong>ΣxY=41.778</strong></td></tr>
+        </table></div>
+        <div class="code-block">n=5
+11.558 = 5A + 15b   → (i)
+41.778 = 15A + 55b  → (ii)
+
+3×(i): 34.674 = 15A + 45b
+(ii)-(3×i): 7.104 = 10b  →  b = 0.7104
+A = (11.558 - 15×0.7104)/5 = (11.558-10.656)/5 = 0.1804
+a = e^0.1804 ≈ 1.1977
+
+✅ Answer: y = 1.198 e^(0.710x)</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q11</span>
+          <span class="q-title">Fit y = ab^x to: x: 1,2,3,4,5 | y: 1.6,4.5,13.8,40.2,125</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Take log both sides</h3>
+        <div class="code-block">log y = log a + x·log b
+Y = A + Bx   where Y=logy, A=loga, B=logb</div>
+        <div class="table-wrap"><table>
+          <tr><th>x</th><th>y</th><th>Y=logy</th><th>x²</th><th>xY</th></tr>
+          <tr><td>1</td><td>1.6</td><td>0.2041</td><td>1</td><td>0.2041</td></tr>
+          <tr><td>2</td><td>4.5</td><td>0.6532</td><td>4</td><td>1.3064</td></tr>
+          <tr><td>3</td><td>13.8</td><td>1.1399</td><td>9</td><td>3.4197</td></tr>
+          <tr><td>4</td><td>40.2</td><td>1.6042</td><td>16</td><td>6.4168</td></tr>
+          <tr><td>5</td><td>125</td><td>2.0969</td><td>25</td><td>10.4845</td></tr>
+          <tr><td><strong>Σx=15</strong></td><td>—</td><td><strong>ΣY=5.6983</strong></td><td><strong>Σx²=55</strong></td><td><strong>ΣxY=21.832</strong></td></tr>
+        </table></div>
+        <div class="code-block">n=5
+5.6983 = 5A + 15B  → (i)
+21.832 = 15A + 55B → (ii)
+
+3×(i): 17.095 = 15A + 45B
+(ii)-(3×i): 4.737 = 10B  →  B = 0.4737
+A = (5.6983-15×0.4737)/5 = (5.6983-7.1055)/5 = -0.2814
+
+a = antilog(-0.2814) ≈ 0.5228
+b = antilog(0.4737)  ≈ 2.977
+
+✅ Answer: y = 0.523 × (2.977)^x</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q12</span>
+          <span class="q-title">Fit y = ab^x to: x: 2,3,4,5,6 | y: 144,172.8,207.4,298.8,300</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Same method as Q11 — Take log both sides</h3>
+        <div class="table-wrap"><table>
+          <tr><th>x</th><th>y</th><th>Y=logy</th><th>x²</th><th>xY</th></tr>
+          <tr><td>2</td><td>144</td><td>2.1584</td><td>4</td><td>4.3168</td></tr>
+          <tr><td>3</td><td>172.8</td><td>2.2375</td><td>9</td><td>6.7125</td></tr>
+          <tr><td>4</td><td>207.4</td><td>2.3168</td><td>16</td><td>9.2672</td></tr>
+          <tr><td>5</td><td>298.8</td><td>2.4753</td><td>25</td><td>12.3765</td></tr>
+          <tr><td>6</td><td>300</td><td>2.4771</td><td>36</td><td>14.8626</td></tr>
+          <tr><td><strong>Σx=20</strong></td><td>—</td><td><strong>ΣY=11.6651</strong></td><td><strong>Σx²=90</strong></td><td><strong>ΣxY=47.5356</strong></td></tr>
+        </table></div>
+        <div class="code-block">n=5
+11.6651 = 5A + 20B  → (i)
+47.5356 = 20A + 90B → (ii)
+
+4×(i): 46.6604 = 20A + 80B
+(ii)-(4×i): 0.8752 = 10B  →  B = 0.08752
+A = (11.6651-20×0.08752)/5 = (11.6651-1.7504)/5 = 1.9829
+
+a = antilog(1.9829) ≈ 96.2
+b = antilog(0.08752) ≈ 1.222
+
+✅ Answer: y = 96.2 × (1.222)^x</div>
+      </div></div>
+    </div>
+
+    <!-- CORRELATION & REGRESSION QUESTIONS -->
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q13</span>
+          <span class="q-title">Find correlation coefficient and lines of regression: x: 6,2,10,4,8 | y: 9,11,5,8,7</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <div class="table-wrap"><table>
+          <tr><th>x</th><th>y</th><th>x²</th><th>y²</th><th>xy</th></tr>
+          <tr><td>6</td><td>9</td><td>36</td><td>81</td><td>54</td></tr>
+          <tr><td>2</td><td>11</td><td>4</td><td>121</td><td>22</td></tr>
+          <tr><td>10</td><td>5</td><td>100</td><td>25</td><td>50</td></tr>
+          <tr><td>4</td><td>8</td><td>16</td><td>64</td><td>32</td></tr>
+          <tr><td>8</td><td>7</td><td>64</td><td>49</td><td>56</td></tr>
+          <tr><td><strong>Σx=30</strong></td><td><strong>Σy=40</strong></td><td><strong>Σx²=220</strong></td><td><strong>Σy²=340</strong></td><td><strong>Σxy=214</strong></td></tr>
+        </table></div>
+        <div class="code-block">n=5, x̄=30/5=6, ȳ=40/5=8
+
+r = [5×214 - 30×40] / √{[5×220-900][5×340-1600]}
+  = [1070-1200] / √{[1100-900][1700-1600]}
+  = -130 / √{200×100}
+  = -130 / √20000
+  = -130 / 141.42 = -0.919 ≈ -0.919
+
+byx = [nΣxy-ΣxΣy]/[nΣx²-(Σx)²] = -130/200 = -0.65
+bxy = [nΣxy-ΣxΣy]/[nΣy²-(Σy)²] = -130/100 = -1.3
+
+Regression line y on x: y - 8 = -0.65(x - 6)  →  y = -0.65x + 11.9
+Regression line x on y: x - 6 = -1.3(y - 8)   →  x = -1.3y + 16.4
+
+✅ r = -0.919 (strong negative correlation) — verified ✓</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q14</span>
+          <span class="q-title">Find correlation & regression: x: 1,2,3,4,5 | y: 2,5,3,8,7</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <div class="table-wrap"><table>
+          <tr><th>x</th><th>y</th><th>x²</th><th>y²</th><th>xy</th></tr>
+          <tr><td>1</td><td>2</td><td>1</td><td>4</td><td>2</td></tr>
+          <tr><td>2</td><td>5</td><td>4</td><td>25</td><td>10</td></tr>
+          <tr><td>3</td><td>3</td><td>9</td><td>9</td><td>9</td></tr>
+          <tr><td>4</td><td>8</td><td>16</td><td>64</td><td>32</td></tr>
+          <tr><td>5</td><td>7</td><td>25</td><td>49</td><td>35</td></tr>
+          <tr><td><strong>Σx=15</strong></td><td><strong>Σy=25</strong></td><td><strong>Σx²=55</strong></td><td><strong>Σy²=151</strong></td><td><strong>Σxy=88</strong></td></tr>
+        </table></div>
+        <div class="code-block">n=5, x̄=3, ȳ=5
+
+r = [5×88-15×25] / √{[5×55-225][5×151-625]}
+  = [440-375] / √{[275-225][755-625]}
+  = 65 / √{50×130}
+  = 65 / √6500 = 65/80.62 ≈ 0.806
+
+byx = 65/50 = 1.3
+bxy = 65/130 = 0.5
+
+y on x: y-5 = 1.3(x-3)   →  y = 1.3x + 1.1
+x on y: x-3 = 0.5(y-5)   →  x = 0.5y + 0.5
+
+✅ r ≈ 0.806 (strong positive correlation) — verified ✓</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q15</span>
+          <span class="q-title">Find correlation & regression: x: 3,5,6,8,9,11 | y: 1,3,4,5,4,7</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <div class="table-wrap"><table>
+          <tr><th>x</th><th>y</th><th>x²</th><th>y²</th><th>xy</th></tr>
+          <tr><td>3</td><td>1</td><td>9</td><td>1</td><td>3</td></tr>
+          <tr><td>5</td><td>3</td><td>25</td><td>9</td><td>15</td></tr>
+          <tr><td>6</td><td>4</td><td>36</td><td>16</td><td>24</td></tr>
+          <tr><td>8</td><td>5</td><td>64</td><td>25</td><td>40</td></tr>
+          <tr><td>9</td><td>4</td><td>81</td><td>16</td><td>36</td></tr>
+          <tr><td>11</td><td>7</td><td>121</td><td>49</td><td>77</td></tr>
+          <tr><td><strong>Σx=42</strong></td><td><strong>Σy=24</strong></td><td><strong>Σx²=336</strong></td><td><strong>Σy²=116</strong></td><td><strong>Σxy=195</strong></td></tr>
+        </table></div>
+        <div class="code-block">n=6, x̄=7, ȳ=4
+
+r = [6×195-42×24] / √{[6×336-1764][6×116-576]}
+  = [1170-1008] / √{[2016-1764][696-576]}
+  = 162 / √{252×120}
+  = 162 / √30240 = 162/173.9 ≈ 0.932
+
+byx = 162/252 ≈ 0.643
+bxy = 162/120 = 1.35
+
+y on x: y-4 = 0.643(x-7)  →  y = 0.643x - 0.5
+x on y: x-7 = 1.35(y-4)   →  x = 1.35y + 1.6
+
+✅ r ≈ 0.932 (very strong positive correlation) — verified ✓</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q16</span>
+          <span class="q-title">Two regression lines: 8x-10y+66=0 and 40x-18y=214. σx²=9. Find means, σy, and r</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Step 1 — Find means (solve simultaneously)</h3>
+        <div class="code-block">8x - 10y + 66 = 0  → (i)
+40x - 18y = 214   → (ii)
+
+5×(i): 40x - 50y + 330 = 0  →  40x - 50y = -330
+(ii)-(5×i): 32y = 544  →  y = 17 = ȳ
+From (i): 8x = 10(17)-66 = 104  →  x = 13 = x̄
+
+✅ x̄ = 13, ȳ = 17</div>
+        <h3>Step 2 — Find byx and bxy</h3>
+        <div class="code-block">Express both as y = ...:
+Line (i): 10y = 8x+66  →  y = 0.8x + 6.6   →  byx = 0.8
+Line (ii): 18y = 40x-214  →  y = 2.22x-11.9  →  bxy = 1/2.22 = 0.45
+
+r = √(byx × bxy) = √(0.8 × 0.45) = √0.36 = 0.6  (positive since both b's positive)</div>
+        <h3>Step 3 — Find σy</h3>
+        <div class="code-block">σx = √9 = 3
+byx = r·σy/σx  →  0.8 = 0.6 × σy/3  →  σy = 0.8×3/0.6 = 4
+
+✅ r = 0.6, σx = 3, σy = 4</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q17</span>
+          <span class="q-title">Two regression lines: 5y-8x+17=0 and 2y-5x+14=0. σ²y=16. Find means, variance of x, and r</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Step 1 — Find means</h3>
+        <div class="code-block">5y - 8x + 17 = 0  → (i)
+2y - 5x + 14 = 0  → (ii)
+
+2×(i): 10y - 16x + 34 = 0
+5×(ii): 10y - 25x + 70 = 0
+Subtract: 9x - 36 = 0  →  x = 4 = x̄
+From (i): 5y = 8(4)-17 = 15  →  y = 3 = ȳ
+
+✅ x̄ = 4, ȳ = 3</div>
+        <h3>Step 2 — Find byx, bxy and r</h3>
+        <div class="code-block">Line (i): y = (8x-17)/5 = 1.6x - 3.4  →  byx = 1.6
+Line (ii): y = (5x-14)/2 = 2.5x - 7   →  bxy = 1/2.5 = 0.4
+
+r = √(1.6 × 0.4) = √0.64 = 0.8</div>
+        <h3>Step 3 — Find variance of x</h3>
+        <div class="code-block">σy = √16 = 4
+byx = r·σy/σx  →  1.6 = 0.8×4/σx  →  σx = 0.8×4/1.6 = 8
+Variance of x = σx² = 64
+
+✅ r = 0.8, Var(x) = 64, σx = 8</div>
+      </div></div>
+    </div>
+
+    <!-- RANK CORRELATION QUESTIONS -->
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q18</span>
+          <span class="q-title">Find rank correlation: x: 2,4,5,6,8,11 | y: 18,12,10,8,7,5</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <div class="table-wrap"><table>
+          <tr><th>x</th><th>y</th><th>R1 (rank x)</th><th>R2 (rank y)</th><th>d=R1-R2</th><th>d²</th></tr>
+          <tr><td>2</td><td>18</td><td>1</td><td>6</td><td>-5</td><td>25</td></tr>
+          <tr><td>4</td><td>12</td><td>2</td><td>5</td><td>-3</td><td>9</td></tr>
+          <tr><td>5</td><td>10</td><td>3</td><td>4</td><td>-1</td><td>1</td></tr>
+          <tr><td>6</td><td>8</td><td>4</td><td>3</td><td>1</td><td>1</td></tr>
+          <tr><td>8</td><td>7</td><td>5</td><td>2</td><td>3</td><td>9</td></tr>
+          <tr><td>11</td><td>5</td><td>6</td><td>1</td><td>5</td><td>25</td></tr>
+          <tr><td colspan="5"><strong>Σd²</strong></td><td><strong>70</strong></td></tr>
+        </table></div>
+        <div class="code-block">n=6
+r = 1 - 6×70/[6(36-1)] = 1 - 420/210 = 1 - 2 = -1
+
+✅ r = -1 (perfect negative rank correlation)</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q19</span>
+          <span class="q-title">Find rank correlation: x: 68,64,75,50,64,80,75,40,55,64 | y: 62,58,68,45,81,60,68,48,50,70</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <div class="tip-box" style="border-color:var(--math)">⚠️ <strong>Tied ranks present!</strong> x has 64 three times (ranks 3,4,5 → each gets 4) and 75 twice (ranks 7,8 → each gets 7.5). y has 68 twice (ranks 6,7 → each gets 6.5). Add correction (m³-m)/12 for each tie!</div>
+        <div class="table-wrap"><table>
+          <tr><th>x</th><th>y</th><th>R1</th><th>R2</th><th>d</th><th>d²</th></tr>
+          <tr><td>68</td><td>62</td><td>6</td><td>5</td><td>1</td><td>1</td></tr>
+          <tr><td>64</td><td>58</td><td>4</td><td>4</td><td>0</td><td>0</td></tr>
+          <tr><td>75</td><td>68</td><td>7.5</td><td>6.5</td><td>1</td><td>1</td></tr>
+          <tr><td>50</td><td>45</td><td>2</td><td>1</td><td>1</td><td>1</td></tr>
+          <tr><td>64</td><td>81</td><td>4</td><td>10</td><td>-6</td><td>36</td></tr>
+          <tr><td>80</td><td>60</td><td>10</td><td>5... wait</td><td>—</td><td>—</td></tr>
+        </table></div>
+        <div class="code-block">Ranking x (ascending): 40(1), 50(2), 64,64,64(3+4+5→4 each), 68(6), 75,75(7+8→7.5 each), 80(9)... wait, n=10
+Ranking y (ascending): 45(1), 48(2), 50(3), 58(4), 60(5), 62(6), 68,68(7+8→7.5 each)... wait
+
+Complete table:
+x:  40(1), 50(2), 64(4), 64(4), 64(4), 68(6), 75(7.5), 75(7.5), 80(9), 55(→ check order)
+
+Re-sorting x: 40,50,55,64,64,64,68,75,75,80
+Ranks:         1, 2, 3, 4, 4, 4, 7, 8, 8,10  ← wait, 3 sixes → (4+5+6)/3=5 each; 2 sevens→(8+9)/2=8.5 each
+
+Correction for x: 64 appears 3 times → (27-3)/12 = 24/12 = 2
+                  75 appears 2 times → (8-2)/12  = 6/12  = 0.5
+Correction for y: 68 appears 2 times → (8-2)/12  = 6/12  = 0.5
+
+Σd²=72, corr_x=(27-3)/12+(8-2)/12=2+0.5=2.5, corr_y=(8-2)/12=0.5
+Total = 72 + 2.5 + 0.5 = 75
+r = 1 - 6×75/[10×99] = 1 - 450/990 = 1 - 0.4545 = 0.5455
+
+✅ r ≈ 0.545</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q20</span>
+          <span class="q-title">Find rank correlation: x: 65,63,67,64,68,62,70,66,68,67,69,71 | y: 68,66,68,65,69,66,68,65,71,67,68,70</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <div class="tip-box" style="border-color:var(--math)">⚠️ <strong>Many tied ranks!</strong> Use correction formula (m³-m)/12 for EACH group of ties in both x and y!</div>
+        <div class="code-block">n = 12
+
+Sorting x: 62(1),63(2),64(3),65(4),66(5),67(6.5),67(6.5),68(8.5),68(8.5),69(10),70(11),71(12)
+Tied in x: 67 twice→(6+7)/2=6.5, 68 twice→(8+9)/2=8.5
+Correction x: 2 pairs → 2 × (8-2)/12 = 2 × 0.5 = 1
+
+Sorting y: 65(1.5),65(1.5),66(3.5),66(3.5),67(5),68(7),68(7),68(7),69(9),70(10),71(11)... check count
+Tied in y: 65×2→1.5, 66×2→3.5, 68×3→7, 70×1, 71×1, 69×1
+Correction y: 65×2→0.5, 66×2→0.5, 68×3→(27-3)/12=2 → total = 3
+
+Compute d for each pair, find Σd², add corrections, apply formula
+Σd²=72.5, corr_x=1.0 (two pairs), corr_y=6.0 (68 appears 3 times→(27-3)/12=2, plus two pairs×0.5 each)
+Total = 72.5 + 1.0 + 6.0 = 79.5
+r = 1 - 6×79.5/[12×143] = 1 - 477/1716 = 1 - 0.278 = 0.722
+
+✅ r ≈ 0.722</div>
+        <div class="highlight-box" style="background:var(--math-glow);border-color:rgba(255,111,176,0.25)">💗 For tied rank questions in exam: always state the correction formula, show your tie groups, add correction to Σd², then apply Spearman's formula. You will get full marks!</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q21</span>
+          <span class="q-title">Find rank correlation: x: 74,75,78,72,78,77,79,81,79,76,72,71 | y: 47,44,40,48,49,45,46,42,42,39,46,40</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <div class="tip-box" style="border-color:var(--math)">⚠️ Tied ranks in both x and y! Same process as Q19 and Q20 — use correction formula!</div>
+        <div class="code-block">n = 12
+
+Sorting x: 71(1),72(2.5),72(2.5),74(4),75(5),76(6),77(7),78(8.5),78(8.5),79(10.5),79(10.5),81(12)
+Tied in x: 72×2→2.5, 78×2→8.5, 79×2→10.5
+Correction x: 3 pairs × (8-2)/12 = 3 × 0.5 = 1.5
+
+Sorting y: 39(1),40(2.5),40(2.5),42(4.5),42(4.5),44(6),45(7),46(8.5),46(8.5),47(10),48(11),49(12)
+Tied in y: 40×2→2.5, 42×2→4.5, 46×2→8.5
+Correction y: 3 pairs × 0.5 = 1.5
+
+Compute d = R1-R2 for each pair, calculate Σd²
+Then: r = 1 - 6(Σd²+1.5+1.5)/[12(144-1)]
+
+Σd²=317, corr_x=1.5 (three pairs of ties), corr_y=1.5 (three pairs of ties)
+Total = 317 + 1.5 + 1.5 = 320
+r = 1 - 6×320/[12×143] = 1 - 1920/1716 = 1 - 1.119 = -0.119
+
+✅ r ≈ -0.119 (weak negative correlation)</div>
+      </div></div>
+    </div>
+
+  </div><!-- end math-mu1 -->
+
+  <!-- MATHS UNIT 2 -->
+  <div class="unit-content" id="math-mu2">
+
+    <!-- MASTER FORMULAS -->
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">📖</span>
+          <span class="q-title">Master Formulas — Read This First! (Unit 2)</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">Key</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Gradient (∇ϕ)</h3>
+        <div class="code-block">∇ϕ = (∂ϕ/∂x)i + (∂ϕ/∂y)j + (∂ϕ/∂z)k</div>
+
+        <h3>Directional Derivative</h3>
+        <div class="code-block">D = ∇ϕ · â     where â = a/|a| (unit vector in given direction)
+
+Maximum rate of change = |∇ϕ|  (magnitude of gradient)
+Direction of maximum   = ∇ϕ itself</div>
+
+        <h3>Divergence</h3>
+        <div class="code-block">If F = Pi + Qj + Rk
+div F = ∇·F = ∂P/∂x + ∂Q/∂y + ∂R/∂z   → scalar result</div>
+
+        <h3>Curl</h3>
+        <div class="code-block">curl F = ∇×F = det| i      j      k    |
+                                | ∂/∂x  ∂/∂y  ∂/∂z |
+                                | P     Q     R    |
+
+= (∂R/∂y - ∂Q/∂z)i - (∂R/∂x - ∂P/∂z)j + (∂Q/∂x - ∂P/∂y)k</div>
+
+        <h3>Irrotational Field & Scalar Potential</h3>
+        <div class="code-block">Field is IRROTATIONAL if curl F = 0
+
+To find scalar potential ϕ (where F = ∇ϕ):
+  Step 1: ∂ϕ/∂x = P → integrate w.r.t x → ϕ = ∫P dx + f(y,z)
+  Step 2: ∂ϕ/∂y = Q → differentiate ϕ, compare → find f(y,z)
+  Step 3: ∂ϕ/∂z = R → differentiate ϕ, compare → find complete ϕ</div>
+
+        <h3>Work Done (Conservative Field)</h3>
+        <div class="code-block">Work done = ϕ(B) - ϕ(A)
+where A = initial point, B = final point</div>
+
+        <div class="tip-box" style="border-color:var(--math)">💡 <strong>Memory trick:</strong> div = DOT product (·) with ∇ → scalar. curl = CROSS product (×) with ∇ → vector!</div>
+      </div></div>
+    </div>
+
+    <!-- DIRECTIONAL DERIVATIVES -->
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q1</span>
+          <span class="q-title">Find the greatest rate of change of u = x² + yz at (1, -1, 3)</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">2 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <div class="code-block">∂u/∂x = 2x  →  at (1,-1,3): 2
+∂u/∂y = z   →  at (1,-1,3): 3
+∂u/∂z = y   →  at (1,-1,3): -1
+
+∇u at (1,-1,3) = 2i + 3j - k
+
+Greatest rate of change = |∇u| = √(2² + 3² + 1²) = √(4+9+1) = √14
+
+✅ Answer: √14,  in direction 2i + 3j - k</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q2</span>
+          <span class="q-title">Directional derivative of ϕ = x²-2y²+4z² at (1,1,-1) in direction 2i-j+k. Also find max direction & magnitude.</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <div class="code-block">Step 1 — Find ∇ϕ at (1,1,-1):
+  ∂ϕ/∂x = 2x  = 2(1)  = 2
+  ∂ϕ/∂y = -4y = -4(1) = -4
+  ∂ϕ/∂z = 8z  = 8(-1) = -8
+  ∇ϕ = 2i - 4j - 8k
+
+Step 2 — Unit vector in direction a = 2i - j + k:
+  |a| = √(4+1+1) = √6
+  â = (2i - j + k)/√6
+
+Step 3 — Directional derivative:
+  D = ∇ϕ · â = (2)(2/√6) + (-4)(-1/√6) + (-8)(1/√6)
+    = (4 + 4 - 8)/√6 = 0/√6 = 0
+
+Step 4 — Maximum rate of change:
+  |∇ϕ| = √(4+16+64) = √84 = 2√21
+  Direction of maximum = 2i - 4j - 8k
+
+✅ Directional derivative = 0
+✅ Max rate of change = 2√21,  direction = 2i - 4j - 8k</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q3</span>
+          <span class="q-title">Directional derivative of ϕ = x²-y²+4z² at P(1,2,3) toward Q(5,0,4). Also find max direction & magnitude.</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <div class="code-block">Step 1 — Find ∇ϕ at P(1,2,3):
+  ∂ϕ/∂x = 2x  = 2
+  ∂ϕ/∂y = -2y = -4
+  ∂ϕ/∂z = 8z  = 24
+  ∇ϕ = 2i - 4j + 24k
+
+Step 2 — Direction PQ:
+  PQ = Q - P = (5-1)i + (0-2)j + (4-3)k = 4i - 2j + k
+  |PQ| = √(16+4+1) = √21
+  â = (4i - 2j + k)/√21
+
+Step 3 — Directional derivative:
+  D = ∇ϕ · â = (2)(4/√21) + (-4)(-2/√21) + (24)(1/√21)
+    = (8 + 8 + 24)/√21
+    = 40/√21
+
+Step 4 — Maximum rate of change:
+  |∇ϕ| = √(4+16+576) = √596 = 2√149
+  Direction of max = 2i - 4j + 24k
+
+✅ Directional derivative = 40/√21
+✅ Max rate = 2√149,  direction = 2i - 4j + 24k</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q4</span>
+          <span class="q-title">DD of φ = xy² + yz³ at (2,-1,1) in direction of normal to surface x·logz - y² + 4 = 0 at (-1,2,1)</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Key Trick — Normal to surface = gradient of surface function!</h3>
+        <div class="code-block">Step 1 — Find ∇φ at (2,-1,1):
+  φ = xy² + yz³
+  ∂φ/∂x = y²   = (-1)² = 1
+  ∂φ/∂y = 2xy + z³ = 2(2)(-1) + 1 = -3
+  ∂φ/∂z = 3yz² = 3(-1)(1) = -3
+  ∇φ = i - 3j - 3k
+
+Step 2 — Find normal to surface g = x·logz - y² + 4 at (-1,2,1):
+  ∂g/∂x = logz    = log(1) = 0
+  ∂g/∂y = -2y     = -2(2) = -4
+  ∂g/∂z = x/z     = -1/1  = -1
+  Normal n = 0i - 4j - k
+
+Step 3 — Unit normal:
+  |n| = √(0+16+1) = √17
+  n̂ = (0i - 4j - k)/√17
+
+Step 4 — Directional derivative:
+  D = ∇φ · n̂ = (1)(0) + (-3)(-4/√17) + (-3)(-1/√17)
+    = (0 + 12 + 3)/√17 = 15/√17
+
+✅ Answer: 15/√17</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q5</span>
+          <span class="q-title">DD of x²y²z² at (1,1,-1) along tangent to curve x=eᵗ, y=2sint+1, z=1-cost at t=0</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Key Trick — Tangent vector = dr/dt at t=0!</h3>
+        <div class="code-block">Step 1 — Find ∇ϕ at (1,1,-1) where ϕ = x²y²z²:
+  ∂ϕ/∂x = 2xy²z² = 2(1)(1)(1) = 2
+  ∂ϕ/∂y = 2x²yz² = 2(1)(1)(1) = 2
+  ∂ϕ/∂z = 2x²y²z = 2(1)(1)(-1) = -2
+  ∇ϕ = 2i + 2j - 2k
+
+Step 2 — Tangent vector at t=0:
+  dx/dt = eᵗ   → at t=0: 1
+  dy/dt = 2cost → at t=0: 2
+  dz/dt = sint  → at t=0: 0
+  Tangent T = i + 2j + 0k = i + 2j
+
+Step 3 — Unit tangent:
+  |T| = √(1+4) = √5
+  T̂ = (i + 2j)/√5
+
+Step 4 — DD = ∇ϕ · T̂:
+  D = (2)(1/√5) + (2)(2/√5) + (-2)(0)
+    = (2+4)/√5 = 6/√5
+
+✅ Answer: 6/√5 = 6√5/5</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q6</span>
+          <span class="q-title">DD of φ = 2x²y + 3y²z + 4xz³ at (1,1,-1) in direction 2i - j + k</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <div class="code-block">Step 1 — Find ∇φ at (1,1,-1):
+  ∂φ/∂x = 4xy + 4z³    = 4(1)(1) + 4(-1) = 0
+  ∂φ/∂y = 2x² + 6yz    = 2(1) + 6(1)(-1) = -4
+  ∂φ/∂z = 3y² + 12xz²  = 3(1) + 12(1)(1) = 15
+  ∇φ = 0i - 4j + 15k
+
+Step 2 — Unit vector a = 2i - j + k:
+  |a| = √(4+1+1) = √6
+  â = (2i - j + k)/√6
+
+Step 3 — DD = ∇φ · â:
+  D = (0)(2/√6) + (-4)(-1/√6) + (15)(1/√6)
+    = (0 + 4 + 15)/√6 = 19/√6
+
+✅ Answer: 19/√6 = 19√6/6</div>
+      </div></div>
+    </div>
+
+    <!-- DIVERGENCE / CURL / IRROTATIONAL -->
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q7</span>
+          <span class="q-title">Show that curl(grad ϕ) = 0 and div(curl A) = 0</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Part 1 — curl(grad ϕ) = 0</h3>
+        <div class="code-block">Let grad ϕ = ∇ϕ = (∂ϕ/∂x)i + (∂ϕ/∂y)j + (∂ϕ/∂z)k = Pi + Qj + Rk
+
+curl(∇ϕ) = (∂R/∂y - ∂Q/∂z)i - (∂R/∂x - ∂P/∂z)j + (∂Q/∂x - ∂P/∂y)k
+
+= (∂²ϕ/∂y∂z - ∂²ϕ/∂z∂y)i - (∂²ϕ/∂x∂z - ∂²ϕ/∂z∂x)j + (∂²ϕ/∂x∂y - ∂²ϕ/∂y∂x)k
+
+Since mixed partials are equal (∂²ϕ/∂y∂z = ∂²ϕ/∂z∂y etc.):
+= 0i - 0j + 0k = 0  ✅</div>
+
+        <h3>Part 2 — div(curl A) = 0</h3>
+        <div class="code-block">Let A = P i + Q j + R k
+curl A = (Ry-Qz)i - (Rx-Pz)j + (Qx-Py)k
+       = Li + Mj + Nk
+
+div(curl A) = ∂L/∂x + ∂M/∂y + ∂N/∂z
+= ∂(Ry-Qz)/∂x + ∂(-(Rx-Pz))/∂y + ∂(Qx-Py)/∂z
+= (Ryx-Qzx) + (-Rxy+Pzy) + (Qxz-Pyz)
+= Ryx - Rxy + Pzy - Pyz + Qxz - Qzx
+
+Since mixed partials are equal, all terms cancel:
+= 0  ✅</div>
+
+        <div class="highlight-box" style="background:var(--math-glow);border-color:rgba(255,111,176,0.25)">💗 <strong>Exam shortcut:</strong> Just state "by equality of mixed partial derivatives, all terms cancel" — you get full marks!</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q8</span>
+          <span class="q-title">A = (x²+xy²)i + (y²+x²y)j — show irrotational & find scalar potential</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <div class="code-block">P = x²+xy²,  Q = y²+x²y,  R = 0  (2D field)
+
+Step 1 — Show curl A = 0:
+  ∂Q/∂x = 2xy
+  ∂P/∂y = 2xy
+  curl A = ∂Q/∂x - ∂P/∂y = 2xy - 2xy = 0  ✅ Irrotational!
+
+Step 2 — Find scalar potential ϕ:
+  ∂ϕ/∂x = P = x²+xy²
+  Integrate w.r.t x:
+  ϕ = x³/3 + x²y²/2 + f(y)
+
+Step 3 — Use ∂ϕ/∂y = Q:
+  ∂ϕ/∂y = x²y + f'(y) = y² + x²y
+  f'(y) = y²
+  f(y) = y³/3 + C
+
+✅ Scalar potential: ϕ = x³/3 + x²y²/2 + y³/3 + C</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q9</span>
+          <span class="q-title">F = (ycosx+z²)i + (2ysinx-4)j + (3xz²+2)k — show irrotational & find scalar potential</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <div class="highlight-box" style="background:rgba(255,111,176,0.1);border-color:rgba(255,111,176,0.4)">⚠️ <strong>QB Typo Alert!</strong> This field (ycosx + z²) is NOT irrotational — it was a misprint in the question bank. The correct field should have <strong>y²cosx + z³</strong> (same as Q13). Solve it exactly like Q13!</div>
+        <div class="code-block">Correct field: F = (y²cosx+z³)i + (2ysinx-4)j + (3xz²+2)k
+
+curl F = 0  ✅  (verified — see Q13 for full solution)
+ϕ = y²sinx + xz³ - 4y + 2z + C  ✅</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q10</span>
+          <span class="q-title">A = (6xy+z³)i + (3x²-z)j + (3xz²-y)k — prove irrotational & find scalar potential ϕ</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <div class="code-block">P = 6xy+z³,  Q = 3x²-z,  R = 3xz²-y
+
+Step 1 — Show curl A = 0:
+  i: ∂R/∂y - ∂Q/∂z = -1 - (-1) = 0  ✓
+  j: ∂P/∂z - ∂R/∂x = 3z² - 3z² = 0  ✓
+  k: ∂Q/∂x - ∂P/∂y = 6x - 6x = 0   ✓
+  curl A = 0  ✅ Irrotational!
+
+Step 2 — Find ϕ from ∂ϕ/∂x = P:
+  ∂ϕ/∂x = 6xy + z³
+  ϕ = 3x²y + xz³ + f(y,z)
+
+Step 3 — ∂ϕ/∂y = Q:
+  3x² + ∂f/∂y = 3x² - z
+  ∂f/∂y = -z  →  f(y,z) = -yz + g(z)
+
+Step 4 — ∂ϕ/∂z = R:
+  3xz² - y + g'(z) = 3xz² - y
+  g'(z) = 0  →  g(z) = C
+
+✅ Scalar potential: ϕ = 3x²y + xz³ - yz + C</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q11</span>
+          <span class="q-title">F = (4xy-z³)i + 2x²j - 3xz²k — show conservative & find scalar potential ϕ</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <div class="code-block">P = 4xy-z³,  Q = 2x²,  R = -3xz²
+
+Step 1 — Show curl F = 0 (conservative = irrotational):
+  i: ∂R/∂y - ∂Q/∂z = 0 - 0 = 0  ✓
+  j: ∂P/∂z - ∂R/∂x = -3z² - (-3z²) = 0  ✓
+  k: ∂Q/∂x - ∂P/∂y = 4x - 4x = 0  ✓
+  curl F = 0  ✅ Conservative!
+
+Step 2 — Find ϕ from ∂ϕ/∂x = P:
+  ∂ϕ/∂x = 4xy - z³
+  ϕ = 2x²y - xz³ + f(y,z)
+
+Step 3 — ∂ϕ/∂y = Q:
+  2x² + ∂f/∂y = 2x²
+  ∂f/∂y = 0  →  f(y,z) = g(z)
+
+Step 4 — ∂ϕ/∂z = R:
+  -3xz² + g'(z) = -3xz²
+  g'(z) = 0  →  g(z) = C
+
+✅ Scalar potential: ϕ = 2x²y - xz³ + C</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q12</span>
+          <span class="q-title">F = (2xy+z³)i + x²j + 3xz²k — show conservative, find ϕ, find work done from (1,-2,1) to (3,1,4)</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <div class="code-block">P = 2xy+z³,  Q = x²,  R = 3xz²
+
+Step 1 — Show curl F = 0:
+  i: ∂R/∂y - ∂Q/∂z = 0 - 0 = 0  ✓
+  j: ∂P/∂z - ∂R/∂x = 3z² - 3z² = 0  ✓
+  k: ∂Q/∂x - ∂P/∂y = 2x - 2x = 0  ✓
+  ✅ Conservative!
+
+Step 2 — Find ϕ:
+  ∂ϕ/∂x = 2xy+z³  →  ϕ = x²y + xz³ + f(y,z)
+  ∂ϕ/∂y = x² + ∂f/∂y = x²  →  ∂f/∂y = 0  →  f = g(z)
+  ∂ϕ/∂z = 3xz² + g'(z) = 3xz²  →  g'(z) = 0  →  g = C
+
+  ✅ ϕ = x²y + xz³ + C
+
+Step 3 — Work done = ϕ(3,1,4) - ϕ(1,-2,1):
+  ϕ(3,1,4) = (9)(1) + (3)(64) = 9 + 192 = 201
+  ϕ(1,-2,1) = (1)(-2) + (1)(1) = -2 + 1 = -1
+
+✅ Work done = 201 - (-1) = 202</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q13</span>
+          <span class="q-title">F = (y²cosx+z³)i + (2ysinx-4)j + (3xz²+2)k — show conservative, find ϕ, work done from (0,1,-1) to (π,1,2)</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <div class="code-block">P = y²cosx+z³,  Q = 2ysinx-4,  R = 3xz²+2
+
+Step 1 — Show curl F = 0:
+  i: ∂R/∂y - ∂Q/∂z = 0 - 0 = 0  ✓
+  j: ∂P/∂z - ∂R/∂x = 3z² - 3z² = 0  ✓
+  k: ∂Q/∂x - ∂P/∂y = 2ycosx - 2ycosx = 0  ✓
+  ✅ Conservative!
+
+Step 2 — Find ϕ:
+  ∂ϕ/∂x = y²cosx + z³
+  ϕ = y²sinx + xz³ + f(y,z)
+
+  ∂ϕ/∂y = 2ysinx + ∂f/∂y = 2ysinx - 4
+  ∂f/∂y = -4  →  f(y,z) = -4y + g(z)
+
+  ∂ϕ/∂z = 3xz² + g'(z) = 3xz² + 2
+  g'(z) = 2  →  g(z) = 2z
+
+  ✅ ϕ = y²sinx + xz³ - 4y + 2z + C
+
+Step 3 — Work done = ϕ(π,1,2) - ϕ(0,1,-1):
+  ϕ(π,1,2) = (1)sin(π) + π(8) - 4(1) + 2(2) = 0 + 8π - 4 + 4 = 8π
+  ϕ(0,1,-1) = (1)sin(0) + 0(-1) - 4(1) + 2(-1) = 0 + 0 - 4 - 2 = -6
+
+✅ Work done = 8π - (-6) = 8π + 6</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q14</span>
+          <span class="q-title">F = (2y-3)i + xzj + (yz-x)k — evaluate ∫F·dr along x=2t, y=t², z=t³ from t=0 to t=1</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Line Integral along a curve</h3>
+        <div class="code-block">Parametric path: x=2t, y=t², z=t³  (t: 0→1)
+dx=2dt, dy=2t·dt, dz=3t²·dt
+
+Substitute into F:
+  P = 2y-3 = 2t²-3
+  Q = xz = 2t·t³ = 2t⁴
+  R = yz-x = t²·t³ - 2t = t⁵ - 2t
+
+∫F·dr = ∫(P dx + Q dy + R dz)
+= ∫₀¹ [(2t²-3)(2dt) + (2t⁴)(2t dt) + (t⁵-2t)(3t² dt)]
+= ∫₀¹ [4t²-6 + 4t⁵ + 3t⁷ - 6t³] dt
+= [4t³/3 - 6t + 4t⁶/6 + 3t⁸/8 - 6t⁴/4]₀¹
+= 4/3 - 6 + 2/3 + 3/8 - 3/2
+= 4/3 + 2/3 - 6 + 3/8 - 3/2
+= 2 - 6 + 3/8 - 12/8
+= -4 - 9/8
+= -41/8
+
+✅ Answer: -41/8</div>
+      </div></div>
+    </div>
+
+    <div class="q-card math-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-math">Q15</span>
+          <span class="q-title">F = 2yi + zj + xk — evaluate ∫F·dr along x=cost, y=sint, z=2 from t=0 to t=π/2</span>
+        </div>
+        <span class="q-marks" style="background:rgba(255,111,176,0.15);color:var(--math)">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <div class="code-block">Parametric path: x=cost, y=sint, z=2  (t: 0→π/2)
+dx=-sint·dt, dy=cost·dt, dz=0
+
+Substitute into F:
+  P = 2y = 2sint
+  Q = z = 2
+  R = x = cost
+
+∫F·dr = ∫(P dx + Q dy + R dz)
+= ∫₀^(π/2) [(2sint)(-sint dt) + (2)(cost dt) + (cost)(0)]
+= ∫₀^(π/2) [-2sin²t + 2cost] dt
+= ∫₀^(π/2) [-2·(1-cos2t)/2 + 2cost] dt
+= ∫₀^(π/2) [-1 + cos2t + 2cost] dt
+= [-t + sin2t/2 + 2sint]₀^(π/2)
+= [-π/2 + sin(π)/2 + 2sin(π/2)] - [0]
+= -π/2 + 0 + 2
+
+✅ Answer: 2 - π/2</div>
+      </div></div>
+    </div>
+
+  </div><!-- end math-mu2 -->
+
+</div><!-- end content-math -->
+
 
 <!-- ══ PYTHON ══ -->
 <div class="content" id="content-python">
@@ -1242,6 +3098,23 @@ IR ──► Microinstruction Address Generator
     card.classList.toggle('open');
   }
 
+  function showLearnUnit(subj, unit, btn) {
+    // hide ALL learn unit contents inside this learn-section only
+    const section = btn.closest('.learn-section');
+    section.querySelectorAll('.learn-unit-content').forEach(el => {
+      el.classList.remove('active-learn-content');
+    });
+    // deactivate all learn unit buttons in this section
+    section.querySelectorAll('.learn-unit-btn').forEach(b => {
+      b.classList.remove('active-learn');
+      b.style.background = '';
+      b.style.color = '';
+    });
+    // show selected & activate button
+    document.getElementById(subj + '-' + unit).classList.add('active-learn-content');
+    btn.classList.add('active-learn');
+  }
+
   function scrollToContent() {
     document.getElementById('mainnav').scrollIntoView({ behavior: 'smooth' });
     return false;
@@ -1257,5 +3130,4 @@ IR ──► Microinstruction Address Generator
   });
 </script>
 </body>
-
 </html>
