@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>f college🌸</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0d14;
+    --surface: #13131f;
+    --card: #1a1a2e;
+    --border: #2a2a45;
+    --cao: #7c6fff;
+    --cao-glow: rgba(124,111,255,0.18);
+    --math: #ff6fb0;
+    --math-glow: rgba(255,111,176,0.18);
+    --python: #6fffd4;
+    --python-glow: rgba(111,255,212,0.18);
+    --physics: #ffb86f;
+    --physics-glow: rgba(255,184,111,0.18);
+    --text: #e8e8f0;
+    --muted: #7878a0;
+    --white: #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── GRAIN OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 999; opacity: 0.5;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 20% 30%, rgba(124,111,255,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 60% at 80% 70%, rgba(255,111,176,0.1) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 50% 50%, rgba(111,255,212,0.06) 0%, transparent 70%);
+  }
+
+  .badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(124,111,255,0.12);
+    border: 1px solid rgba(124,111,255,0.3);
+    border-radius: 100px;
+    padding: 0.4rem 1.2rem;
+    font-size: 0.8rem; font-weight: 500;
+    color: var(--cao);
+    margin-bottom: 2rem;
+    animation: fadeUp 0.6s ease both;
+    letter-spacing: 0.05em;
+  }
+
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.8rem, 8vw, 6rem);
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.7s ease 0.1s both;
+  }
+
+  .hero h1 span.grad-cao { background: linear-gradient(135deg, var(--cao), #b8b0ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero h1 span.grad-math { background: linear-gradient(135deg, var(--math), #ffb3d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero h1 span.grad-python { background: linear-gradient(135deg, var(--python), #b0fff0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero h1 span.grad-physics { background: linear-gradient(135deg, var(--physics), #ffe0b0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+  .hero p {
+    font-size: 1.15rem; color: var(--muted); max-width: 520px;
+    line-height: 1.7; margin-bottom: 2.5rem;
+    animation: fadeUp 0.7s ease 0.2s both;
+  }
+
+  .hero-subjects {
+    display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;
+    animation: fadeUp 0.7s ease 0.3s both;
+    margin-bottom: 3rem;
+  }
+
+  .subj-chip {
+    padding: 0.5rem 1.1rem;
+    border-radius: 100px;
+    font-size: 0.85rem; font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+  }
+  .subj-chip:hover { transform: translateY(-3px); }
+  .chip-cao { background: rgba(124,111,255,0.15); border: 1px solid rgba(124,111,255,0.4); color: var(--cao); }
+  .chip-math { background: rgba(255,111,176,0.15); border: 1px solid rgba(255,111,176,0.4); color: var(--math); }
+  .chip-python { background: rgba(111,255,212,0.15); border: 1px solid rgba(111,255,212,0.4); color: var(--python); }
+  .chip-physics { background: rgba(255,184,111,0.15); border: 1px solid rgba(255,184,111,0.4); color: var(--physics); }
+
+  .scroll-hint {
+    animation: fadeUp 0.7s ease 0.4s both, bounce 2s ease 1s infinite;
+    color: var(--muted); font-size: 0.85rem;
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  }
+  .scroll-arrow { font-size: 1.4rem; }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(13,13,20,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0.9rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 1.1rem;
+    background: linear-gradient(135deg, var(--cao), var(--math));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+
+  .nav-tabs {
+    display: flex; gap: 0.3rem;
+    list-style: none;
+    overflow-x: auto;
+  }
+
+  .nav-tab {
+    padding: 0.45rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem; font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    border: none; background: transparent;
+    color: var(--muted);
+    white-space: nowrap;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .nav-tab:hover { background: var(--card); color: var(--text); }
+  .nav-tab.active-cao { background: var(--cao-glow); color: var(--cao); }
+  .nav-tab.active-math { background: var(--math-glow); color: var(--math); }
+  .nav-tab.active-python { background: var(--python-glow); color: var(--python); }
+  .nav-tab.active-physics { background: var(--physics-glow); color: var(--physics); }
+
+  /* ── MAIN CONTENT ── */
+  .content { display: none; padding: 2.5rem clamp(1rem, 5vw, 4rem); max-width: 960px; margin: 0 auto; }
+  .content.active { display: block; animation: fadeUp 0.4s ease both; }
+
+  .subject-header {
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .subject-icon {
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem;
+  }
+  .icon-cao { background: var(--cao-glow); border: 1px solid rgba(124,111,255,0.3); }
+  .icon-math { background: var(--math-glow); border: 1px solid rgba(255,111,176,0.3); }
+  .icon-python { background: var(--python-glow); border: 1px solid rgba(111,255,212,0.3); }
+  .icon-physics { background: var(--physics-glow); border: 1px solid rgba(255,184,111,0.3); }
+
+  .subject-header-text h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.6rem; font-weight: 700;
+  }
+  .subject-header-text p { color: var(--muted); font-size: 0.9rem; margin-top: 0.2rem; }
+
+  /* ── UNIT TABS ── */
+  .unit-tabs {
+    display: flex; gap: 0.5rem; margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  .unit-tab {
+    padding: 0.5rem 1.2rem;
+    border-radius: 100px;
+    font-size: 0.85rem; font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+  }
+  .unit-tab:hover { border-color: var(--cao); color: var(--text); }
+  .unit-tab.active { color: var(--bg); }
+  .unit-tab.active.cao { background: var(--cao); border-color: var(--cao); }
+  .unit-tab.active.math { background: var(--math); border-color: var(--math); }
+  .unit-tab.active.python { background: var(--python); border-color: var(--python); }
+  .unit-tab.active.physics { background: var(--physics); border-color: var(--physics); }
+  .unit-tab.coming { opacity: 0.4; cursor: not-allowed; }
+
+  /* ── QUESTION CARDS ── */
+  .unit-content { display: none; }
+  .unit-content.active { display: block; }
+
+  .q-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    margin-bottom: 1.2rem;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .q-card:hover { border-color: rgba(124,111,255,0.3); }
+  .q-card.math-card:hover { border-color: rgba(255,111,176,0.3); }
+  .q-card.python-card:hover { border-color: rgba(111,255,212,0.3); }
+  .q-card.physics-card:hover { border-color: rgba(255,184,111,0.3); }
+
+  .q-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 1.4rem;
+    cursor: pointer;
+    gap: 1rem;
+    user-select: none;
+  }
+
+  .q-title-wrap { display: flex; align-items: flex-start; gap: 0.8rem; flex: 1; }
+
+  .q-num {
+    min-width: 28px; height: 28px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: 700;
+    font-family: 'Syne', sans-serif;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .num-cao { background: var(--cao-glow); color: var(--cao); }
+  .num-math { background: var(--math-glow); color: var(--math); }
+  .num-python { background: var(--python-glow); color: var(--python); }
+  .num-physics { background: var(--physics-glow); color: var(--physics); }
+
+  .q-title { font-size: 0.95rem; font-weight: 500; line-height: 1.5; }
+  .q-marks {
+    font-size: 0.75rem; font-weight: 600;
+    padding: 0.2rem 0.6rem; border-radius: 6px;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  .marks-4 { background: rgba(124,111,255,0.15); color: var(--cao); }
+  .marks-2 { background: rgba(255,111,176,0.15); color: var(--math); }
+
+  .q-chevron {
+    color: var(--muted); font-size: 1.1rem;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+  .q-card.open .q-chevron { transform: rotate(180deg); }
+
+  .q-body {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1);
+    border-top: 0px solid var(--border);
+  }
+  .q-card.open .q-body {
+    max-height: 3000px;
+    border-top: 1px solid var(--border);
+  }
+
+  .q-inner { padding: 1.4rem; }
+
+  .q-inner h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem; font-weight: 700;
+    color: var(--cao);
+    margin: 1.2rem 0 0.5rem;
+    letter-spacing: 0.03em;
+  }
+  .math-card .q-inner h3 { color: var(--math); }
+  .python-card .q-inner h3 { color: var(--python); }
+  .physics-card .q-inner h3 { color: var(--physics); }
+
+  .q-inner h3:first-child { margin-top: 0; }
+
+  .q-inner p { font-size: 0.9rem; line-height: 1.75; color: #c0c0d8; margin-bottom: 0.7rem; }
+
+  .q-inner ul { padding-left: 1.2rem; margin-bottom: 0.7rem; }
+  .q-inner ul li { font-size: 0.9rem; line-height: 1.75; color: #c0c0d8; margin-bottom: 0.25rem; }
+
+  .code-block {
+    background: #0a0a14;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: #a0ffc8;
+    overflow-x: auto;
+    margin: 0.7rem 0;
+    white-space: pre;
+  }
+
+  .table-wrap { overflow-x: auto; margin: 0.7rem 0; border-radius: 10px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  th { background: rgba(124,111,255,0.1); color: var(--cao); font-weight: 600; padding: 0.65rem 0.9rem; text-align: left; border-bottom: 1px solid var(--border); }
+  .math-card th { background: rgba(255,111,176,0.1); color: var(--math); }
+  .python-card th { background: rgba(111,255,212,0.1); color: var(--python); }
+  .physics-card th { background: rgba(255,184,111,0.1); color: var(--physics); }
+  td { padding: 0.6rem 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: #c0c0d8; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+
+  .highlight-box {
+    background: var(--cao-glow);
+    border: 1px solid rgba(124,111,255,0.25);
+    border-radius: 10px;
+    padding: 0.9rem 1.1rem;
+    margin: 0.7rem 0;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: #d0d0f0;
+  }
+  .math-card .highlight-box { background: var(--math-glow); border-color: rgba(255,111,176,0.25); }
+  .python-card .highlight-box { background: var(--python-glow); border-color: rgba(111,255,212,0.25); }
+  .physics-card .highlight-box { background: var(--physics-glow); border-color: rgba(255,184,111,0.25); }
+
+  .tip-box {
+    background: rgba(255,184,111,0.08);
+    border-left: 3px solid var(--physics);
+    padding: 0.8rem 1rem;
+    border-radius: 0 8px 8px 0;
+    margin: 0.7rem 0;
+    font-size: 0.87rem;
+    color: #e0d0c0;
+    line-height: 1.65;
+  }
+
+  /* ── COMING SOON ── */
+  .coming-soon-card {
+    background: var(--card);
+    border: 1px dashed var(--border);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    text-align: center;
+    color: var(--muted);
+  }
+  .coming-soon-card .cs-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  .coming-soon-card h3 { font-family: 'Syne', sans-serif; font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--text); }
+  .coming-soon-card p { font-size: 0.875rem; }
+
+  /* ── PROGRESS BAR ── */
+  .progress-section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .progress-section h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.9rem; font-weight: 700;
+    color: var(--muted); margin-bottom: 1rem;
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .prog-item { margin-bottom: 0.9rem; }
+  .prog-label { display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 0.3rem; }
+  .prog-bar { height: 6px; background: var(--border); border-radius: 100px; overflow: hidden; }
+  .prog-fill { height: 100%; border-radius: 100px; transition: width 1s ease; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .nav-tabs { gap: 0.2rem; }
+    .nav-tab { padding: 0.4rem 0.7rem; font-size: 0.78rem; }
+    .hero h1 { font-size: 2.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="badge">✨ Sem 2 · F college · CSE/IT/AIDS 2024–25</div>
+  <h1>
+    F college professors,<br>
+    Score <span class="grad-cao">Out</span> <span class="grad-math">of</span><br>
+    <span class="grad-python">Every</span><span class="grad-physics">one</span> 🌸
+  </h1>
+  <p>Your complete midsem preparation hub — question bank answers, unit-by-unit, made with love for every student who wants to top the class 💗</p>
+  <div class="hero-subjects">
+    <a class="subj-chip chip-cao" href="#" onclick="showSubject('cao');scrollToContent()">💻 CAO</a>
+    <a class="subj-chip chip-math" href="#" onclick="showSubject('math');scrollToContent()">📐 Mathematics</a>
+    <a class="subj-chip chip-python" href="#" onclick="showSubject('python');scrollToContent()">🐍 Python</a>
+    <a class="subj-chip chip-physics" href="#" onclick="showSubject('physics');scrollToContent()">⚛️ Physics</a>
+  </div>
+  <div class="scroll-hint">
+    <span>scroll to study</span>
+    <span class="scroll-arrow">↓</span>
+  </div>
+</section>
+
+<!-- ══ NAV ══ -->
+<nav id="mainnav">
+  <div class="nav-logo">Sem2 Study Hub</div>
+  <ul class="nav-tabs">
+    <li><button class="nav-tab active-cao" onclick="showSubject('cao')" id="tab-cao">💻 CAO</button></li>
+    <li><button class="nav-tab" onclick="showSubject('math')" id="tab-math">📐 Maths</button></li>
+    <li><button class="nav-tab" onclick="showSubject('python')" id="tab-python">🐍 Python</button></li>
+    <li><button class="nav-tab" onclick="showSubject('physics')" id="tab-physics">⚛️ Physics</button></li>
+  </ul>
+</nav>
+
+<!-- ══════════════════════════════════════════ -->
+<!--  CAO SUBJECT                               -->
+<!-- ══════════════════════════════════════════ -->
+<div class="content active" id="content-cao">
+  <div class="subject-header">
+    <div class="subject-icon icon-cao">💻</div>
+    <div class="subject-header-text">
+      <h2 style="color:var(--cao)">Computer Architecture & Organisation</h2>
+      <p>2BCS04T · Units covered so far: 1 & 2</p>
+    </div>
+  </div>
+
+  <div class="progress-section">
+    <h3>Your Progress</h3>
+    <div class="prog-item">
+      <div class="prog-label"><span>Unit 1 — Basic Structure</span><span style="color:var(--cao)">✅ Complete</span></div>
+      <div class="prog-bar"><div class="prog-fill" style="width:100%;background:var(--cao)"></div></div>
+    </div>
+    <div class="prog-item">
+      <div class="prog-label"><span>Unit 2 — Instruction Formats</span><span style="color:var(--cao)">✅ Complete</span></div>
+      <div class="prog-bar"><div class="prog-fill" style="width:100%;background:var(--cao)"></div></div>
+    </div>
+    <div class="prog-item">
+      <div class="prog-label"><span>Unit 3 — Arithmetic</span><span style="color:var(--muted)">Coming soon</span></div>
+      <div class="prog-bar"><div class="prog-fill" style="width:0%;background:var(--cao)"></div></div>
+    </div>
+  </div>
+
+  <div class="unit-tabs">
+    <button class="unit-tab active cao" onclick="showUnit('cao','u1')">Unit 1</button>
+    <button class="unit-tab cao" onclick="showUnit('cao','u2')">Unit 2</button>
+    <button class="unit-tab coming" disabled>Unit 3 — Soon</button>
+  </div>
+
+  <!-- CAO UNIT 1 -->
+  <div class="unit-content active" id="cao-u1">
+
+    <!-- Q1 -->
+    <div class="q-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-cao">Q1</span>
+          <span class="q-title">Describe basic Functional Units of Computer with block diagram</span>
+        </div>
+        <span class="q-marks marks-4">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Definition</h3>
+        <p>A computer consists of five functionally independent main parts that work together to accept, process, store, and output information.</p>
+        <h3>The 5 Functional Units</h3>
+        <div class="table-wrap"><table>
+          <tr><th>Unit</th><th>Role</th><th>Examples</th></tr>
+          <tr><td><strong>Input Unit</strong></td><td>Accepts data from user, converts to binary</td><td>Keyboard, mouse, microphone</td></tr>
+          <tr><td><strong>Memory Unit</strong></td><td>Stores programs and data (Primary + Secondary)</td><td>RAM, Hard disk, Cache</td></tr>
+          <tr><td><strong>ALU</strong></td><td>Performs all arithmetic and logic operations</td><td>Adder, comparator circuits</td></tr>
+          <tr><td><strong>Output Unit</strong></td><td>Sends processed results to outside world</td><td>Monitor, printer, speaker</td></tr>
+          <tr><td><strong>Control Unit</strong></td><td>Coordinates all other units via timing signals</td><td>Control circuitry, decoder</td></tr>
+        </table></div>
+        <h3>Block Diagram (Draw this in exam!)</h3>
+        <div class="code-block">
+              ┌──────────┐
+              │  MEMORY  │
+              └────┬─────┘
+                   │  (Interconnection Network)
+ ┌────────┐   ┌────┴────────────┐   ┌─────────┐
+ │ INPUT  │◄──►    (I/O Unit)   ◄──►│  ALU    │
+ └────────┘   └────┬────────────┘   └─────────┘
+ ┌────────┐        │                ┌─────────┐
+ │ OUTPUT │◄───────┤                │ CONTROL │
+ └────────┘        └────────────────┘
+                      (Processor = ALU + Control)</div>
+        <div class="tip-box">💡 <strong>Exam Tip:</strong> Write: Definition → Name all 5 units → Explain each in 2 lines → Draw diagram. You will get full 4 marks!</div>
+        <h3>Memory Types (Important!)</h3>
+        <div class="table-wrap"><table>
+          <tr><th>Primary</th><th>Secondary</th><th>Cache</th></tr>
+          <tr><td>RAM — fast, temporary</td><td>HDD/SSD — slow, permanent</td><td>Fastest — inside CPU chip</td></tr>
+          <tr><td>Loses data when power off</td><td>Keeps data permanently</td><td>Holds currently-used instructions</td></tr>
+        </table></div>
+      </div></div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="q-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-cao">Q2</span>
+          <span class="q-title">Discuss different types of computer</span>
+        </div>
+        <span class="q-marks marks-2">2 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>4 Types — Keep answers short for 2 marks!</h3>
+        <div class="table-wrap"><table>
+          <tr><th>Type</th><th>Description</th><th>Example Use</th></tr>
+          <tr><td><strong>Embedded</strong></td><td>Built into devices, do one specific job</td><td>Washing machine, car, phone</td></tr>
+          <tr><td><strong>Personal Computers</strong></td><td>For individual everyday use (Desktop, Laptop, Workstation)</td><td>Home/office computing</td></tr>
+          <tr><td><strong>Servers & Enterprise</strong></td><td>Shared by many users over a network; host large databases</td><td>Government, company servers</td></tr>
+          <tr><td><strong>Supercomputers / Grid</strong></td><td>Fastest & most expensive; Grid = many PCs connected</td><td>Weather forecasting, research</td></tr>
+        </table></div>
+      </div></div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="q-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-cao">Q3</span>
+          <span class="q-title">Explain basic operational concepts between processor & Memory</span>
+        </div>
+        <span class="q-marks marks-4">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Key Registers</h3>
+        <div class="table-wrap"><table>
+          <tr><th>Register</th><th>Full Name</th><th>Function</th></tr>
+          <tr><td><strong>PC</strong></td><td>Program Counter</td><td>Holds address of NEXT instruction to fetch</td></tr>
+          <tr><td><strong>IR</strong></td><td>Instruction Register</td><td>Holds instruction currently being executed</td></tr>
+          <tr><td><strong>MAR</strong></td><td>Memory Address Register</td><td>Holds address being accessed in memory</td></tr>
+          <tr><td><strong>MDR</strong></td><td>Memory Data Register</td><td>Holds data being read/written to memory</td></tr>
+        </table></div>
+        <h3>Fetch-Execute Cycle</h3>
+        <div class="code-block">
+Step 1: PC → holds address of next instruction
+Step 2: Address sent to Memory → instruction FETCHED → placed in IR
+Step 3: PC incremented to point to NEXT instruction  (PC = PC + 4)
+Step 4: Control unit DECODES instruction in IR
+Step 5: ALU EXECUTES the operation
+Step 6: Result stored back in memory or register</div>
+        <h3>Two Memory Operations</h3>
+        <ul>
+          <li><strong>READ:</strong> Processor sends address + READ signal → Memory returns data copy. Original stays unchanged.</li>
+          <li><strong>WRITE:</strong> Processor sends address + data + WRITE signal → Memory overwrites old data.</li>
+        </ul>
+      </div></div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="q-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-cao">Q4</span>
+          <span class="q-title">Elaborate Single Bus Architecture in detail</span>
+        </div>
+        <span class="q-marks marks-4">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>What is a Bus?</h3>
+        <p>A bus is a group of wires that connects all parts of a computer and carries data between them. The single bus connects the ALU and ALL registers via one common internal path.</p>
+        <h3>Diagram</h3>
+        <div class="code-block">
+┌────────────────── SINGLE INTERNAL BUS ──────────────────┐
+│                                                          │
+PC   MAR   MDR   IR   R0   R1 ... R(n-1)   Y   Z   TEMP
+│     │     │         
+│  Address  Data       
+│   Bus    Bus  ← connects to external memory
+│
+└──► ALU (with MUX selecting Y or constant 4)</div>
+        <h3>Key Components</h3>
+        <div class="table-wrap"><table>
+          <tr><th>Component</th><th>Role</th></tr>
+          <tr><td>MAR</td><td>Output connects to external address bus → points to memory location</td></tr>
+          <tr><td>MDR</td><td>Two inputs (internal bus / memory bus), two outputs. Bridges processor ↔ memory</td></tr>
+          <tr><td>Y, Z, TEMP</td><td>Temporary registers used during multi-step instruction execution</td></tr>
+          <tr><td>MUX</td><td>Selects either register Y or constant 4 as ALU input A</td></tr>
+        </table></div>
+        <h3>Register Transfer (How data moves)</h3>
+        <p>Each register has two control signals: <strong>Riin</strong> (load from bus) and <strong>Riout</strong> (place on bus). To transfer R1 → R4: set R1out=1 (puts R1 on bus), then set R4in=1 (loads bus into R4).</p>
+        <div class="highlight-box">⚡ <strong>Advantage:</strong> Simple design, low cost<br>⚠️ <strong>Disadvantage:</strong> SLOW — only ONE transfer per clock cycle</div>
+      </div></div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="q-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-cao">Q5</span>
+          <span class="q-title">Differentiate between RISC and CISC Instruction Sets</span>
+        </div>
+        <span class="q-marks marks-2">2 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <div class="table-wrap"><table>
+          <tr><th>Feature</th><th>RISC</th><th>CISC</th></tr>
+          <tr><td>Full Form</td><td>Reduced Instruction Set Computer</td><td>Complex Instruction Set Computer</td></tr>
+          <tr><td>Instructions</td><td>Simple, fewer instructions</td><td>Complex, many instructions</td></tr>
+          <tr><td>Instruction size</td><td>Fixed (1 word)</td><td>Variable size</td></tr>
+          <tr><td>Clock cycles</td><td>1 cycle per instruction</td><td>Multiple cycles per instruction</td></tr>
+          <tr><td>Speed</td><td>Faster (pipelining easier)</td><td>Slower</td></tr>
+          <tr><td>Example</td><td>ARM processors</td><td>Intel x86</td></tr>
+        </table></div>
+      </div></div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="q-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-cao">Q6</span>
+          <span class="q-title">Differentiate between Multi-processor and Multi-Computer</span>
+        </div>
+        <span class="q-marks marks-2">2 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <div class="table-wrap"><table>
+          <tr><th>Feature</th><th>Multiprocessor</th><th>Multicomputer</th></tr>
+          <tr><td>Memory</td><td>Shared memory (all CPUs share RAM)</td><td>Each computer has its OWN memory</td></tr>
+          <tr><td>Communication</td><td>Direct memory access</td><td>Send messages over a network</td></tr>
+          <tr><td>Also called</td><td>Shared-memory multiprocessor</td><td>Message-passing multicomputer</td></tr>
+          <tr><td>Cost</td><td>Higher (complex interconnections)</td><td>Lower (uses normal network)</td></tr>
+        </table></div>
+      </div></div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="q-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-cao">Q7</span>
+          <span class="q-title">Elaborate the working of Memory Addresses and its Operations</span>
+        </div>
+        <span class="q-marks marks-4">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Memory Organization</h3>
+        <ul>
+          <li>Memory = millions of <strong>cells</strong>, each stores 1 bit (0 or 1)</li>
+          <li>Cells grouped into <strong>words</strong> (16, 32, or 64 bits typically)</li>
+          <li>Each word has a unique <strong>address</strong> starting from 0</li>
+          <li>A unit of 8 bits = 1 <strong>byte</strong></li>
+        </ul>
+        <div class="code-block">
+Address     Content
+  0000  →  [ word 0  ]
+  0001  →  [ word 1  ]
+  0002  →  [ word 2  ]
+   ...
+  FFFF  →  [ last word ]</div>
+        <h3>READ Operation</h3>
+        <ul>
+          <li>Processor sends address + READ signal to memory</li>
+          <li>Memory retrieves and sends a <strong>copy</strong> to processor</li>
+          <li>Original data in memory stays <strong>unchanged ✅</strong></li>
+        </ul>
+        <h3>WRITE Operation</h3>
+        <ul>
+          <li>Processor sends address + data + WRITE signal</li>
+          <li>Memory writes new data to that location</li>
+          <li>Old data is <strong>overwritten and lost ⚠️</strong></li>
+        </ul>
+      </div></div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="q-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-cao">Q8</span>
+          <span class="q-title">State and explain the different types of Addressing Modes</span>
+        </div>
+        <span class="q-marks marks-4">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>What are Addressing Modes?</h3>
+        <p>Addressing modes are the different ways a processor can find/locate the operand (data) needed for an instruction. EA = Effective Address = actual memory location of data.</p>
+        <div class="table-wrap"><table>
+          <tr><th>Mode</th><th>Syntax</th><th>EA Formula</th><th>Example</th></tr>
+          <tr><td><strong>Immediate</strong></td><td>#Value</td><td>Operand = Value itself</td><td>Add R4, R6, #200</td></tr>
+          <tr><td><strong>Register</strong></td><td>Ri</td><td>EA = Register Ri</td><td>Add R4, R2, R3</td></tr>
+          <tr><td><strong>Absolute</strong></td><td>LOC</td><td>EA = LOC (given directly)</td><td>Load R2, NUM1</td></tr>
+          <tr><td><strong>Register Indirect</strong></td><td>(Ri)</td><td>EA = [Ri] (contents of Ri)</td><td>Load R2, (R5)</td></tr>
+          <tr><td><strong>Index</strong></td><td>X(Ri)</td><td>EA = X + [Ri]</td><td>Load R5, 100(R7)</td></tr>
+          <tr><td><strong>Base with Index</strong></td><td>(Ri,Rj)</td><td>EA = [Ri] + [Rj]</td><td>Load R1, (R2,R3)</td></tr>
+        </table></div>
+        <div class="tip-box">💡 Memory trick: <strong>"I R A R I B"</strong> → Immediate, Register, Absolute, Register-Indirect, Index, Base-with-Index</div>
+      </div></div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="q-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-cao">Q9</span>
+          <span class="q-title">Write short note on Stack Memory and its Operations</span>
+        </div>
+        <span class="q-marks marks-4">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>What is a Stack?</h3>
+        <p>A stack is a special memory structure that follows the <strong>LIFO (Last In, First Out)</strong> principle. Think of a pile of plates — you always add and remove from the TOP!</p>
+        <h3>Key Terms</h3>
+        <ul>
+          <li><strong>TOP</strong> — where items are added/removed</li>
+          <li><strong>BOTTOM</strong> — the very first item placed</li>
+          <li><strong>SP (Stack Pointer)</strong> — register that always points to current TOP</li>
+        </ul>
+        <h3>PUSH Operation (Adding to stack)</h3>
+        <div class="code-block">Subtract SP, SP, #4    ← SP moves DOWN (stack grows downward)
+Store Rj, (SP)         ← new item placed at TOP</div>
+        <h3>POP Operation (Removing from stack)</h3>
+        <div class="code-block">Load Rj, (SP)          ← take TOP item into register Rj
+Add SP, SP, #4         ← SP moves UP (new TOP revealed)</div>
+        <h3>Stack Diagram</h3>
+        <div class="code-block">
+   SP →  [ -28 ]  ← TOP (most recently added)
+         [  17 ]
+         [ 739 ]
+BOTTOM → [  43 ]  ← BOTTOM (first added, last removed)</div>
+        <div class="highlight-box">Uses of Stack: Return addresses for subroutines · Parameter passing · Zero-address instruction evaluation (postfix expressions)</div>
+      </div></div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="q-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-cao">Q10</span>
+          <span class="q-title">What is Subroutine? Why it is used? Explain with diagram</span>
+        </div>
+        <span class="q-marks marks-4">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>What is a Subroutine?</h3>
+        <p>A subroutine is a block of instructions that performs a specific task and can be <strong>called multiple times</strong> from different places in a program. Also called: function, procedure, or method.</p>
+        <h3>Why Use Subroutines?</h3>
+        <ul>
+          <li>Saves memory — write code once, use many times</li>
+          <li>Makes programs organized and readable</li>
+          <li>Reduces repetition and errors</li>
+        </ul>
+        <h3>Two Key Instructions</h3>
+        <div class="table-wrap"><table>
+          <tr><th>Instruction</th><th>Action</th></tr>
+          <tr><td><strong>CALL</strong></td><td>Saves current PC into Link Register → jumps to subroutine start</td></tr>
+          <tr><td><strong>RETURN</strong></td><td>Loads Link Register back into PC → returns to calling program</td></tr>
+        </table></div>
+        <h3>Diagram</h3>
+        <div class="code-block">
+Memory    Calling Program         Memory    Subroutine SUB
+  200  →  Call SUB ──────────────► 1000    first instruction
+  204  ←  next instruction ◄──────  ...       ...
+   ...     ...                              Return
+           ↑ execution resumes here after Return</div>
+        <h3>Subroutine Nesting</h3>
+        <p>When a subroutine calls ANOTHER subroutine — return addresses are saved on the <strong>STACK</strong> (not just link register) to correctly track all returns.</p>
+      </div></div>
+    </div>
+
+  </div><!-- end cao-u1 -->
+
+  <!-- CAO UNIT 2 -->
+  <div class="unit-content" id="cao-u2">
+
+    <!-- Q1 -->
+    <div class="q-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-cao">Q1</span>
+          <span class="q-title">What is an Instruction Format? Mention its different types</span>
+        </div>
+        <span class="q-marks marks-2">2 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Definition</h3>
+        <p>Instruction format refers to the way instructions are encoded and structured in machine language. Each instruction is made up of <strong>fields</strong> (groups of bits), each carrying specific information.</p>
+        <h3>Three Main Fields</h3>
+        <ul>
+          <li><strong>Operation field (Opcode)</strong> — specifies the operation (e.g. ADD, LOAD)</li>
+          <li><strong>Address field</strong> — location of the operand (register or memory)</li>
+          <li><strong>Mode field</strong> — specifies HOW the operand is found</li>
+        </ul>
+        <h3>Types of Instruction Formats</h3>
+        <div class="table-wrap"><table>
+          <tr><th>Type</th><th>Address Fields</th><th>Architecture</th></tr>
+          <tr><td>Zero Address</td><td>0</td><td>Stack-based</td></tr>
+          <tr><td>One Address</td><td>1</td><td>Accumulator-based</td></tr>
+          <tr><td>Two Address</td><td>2</td><td>General register</td></tr>
+          <tr><td>Three Address</td><td>3</td><td>General register</td></tr>
+        </table></div>
+      </div></div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="q-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-cao">Q2</span>
+          <span class="q-title">Describe Zero Address Instruction Format in detail with example</span>
+        </div>
+        <span class="q-marks marks-4">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>What is Zero Address?</h3>
+        <p>Instructions have <strong>no address field</strong>. They operate on data implicitly using a <strong>STACK</strong>. Expression must first be converted to <strong>Postfix (Reverse Polish) Notation</strong>.</p>
+        <h3>Example: X = (A+B)*(C+D)</h3>
+        <p>Postfix form: <strong>AB+CD+*</strong></p>
+        <div class="table-wrap"><table>
+          <tr><th>Operation</th><th>Instruction</th><th>Stack TOP after</th></tr>
+          <tr><td>Push A</td><td>PUSH A</td><td>TOP = A</td></tr>
+          <tr><td>Push B</td><td>PUSH B</td><td>TOP = B</td></tr>
+          <tr><td>Add</td><td>ADD</td><td>TOP = A+B</td></tr>
+          <tr><td>Push C</td><td>PUSH C</td><td>TOP = C</td></tr>
+          <tr><td>Push D</td><td>PUSH D</td><td>TOP = D</td></tr>
+          <tr><td>Add</td><td>ADD</td><td>TOP = C+D</td></tr>
+          <tr><td>Multiply</td><td>MUL</td><td>TOP = (A+B)*(C+D)</td></tr>
+          <tr><td>Pop X</td><td>POP X</td><td>M[X] = result</td></tr>
+        </table></div>
+        <div class="highlight-box">Total: 8 instructions · Uses: Stack · No address bits needed · Compact code</div>
+      </div></div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="q-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-cao">Q3</span>
+          <span class="q-title">Explain One Address Instruction Format in detail with example</span>
+        </div>
+        <span class="q-marks marks-4">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>What is One Address?</h3>
+        <p>Uses one address field. One operand is always implied to be in the <strong>ACCUMULATOR (AC)</strong> — the CPU already knows this, so no need to specify it.</p>
+        <h3>Instruction Format</h3>
+        <div class="code-block">[ OPCODE | operand/address | mode ]</div>
+        <h3>Example: X = (A+B)*(C+D)</h3>
+        <div class="table-wrap"><table>
+          <tr><th>Operation</th><th>Instruction</th><th>AC / Memory After</th></tr>
+          <tr><td>Load A</td><td>AC = A</td><td>AC = A</td></tr>
+          <tr><td>Add B</td><td>AC = AC + B</td><td>AC = A+B</td></tr>
+          <tr><td>Store M[T]</td><td>M[T] = AC</td><td>M[T] = A+B</td></tr>
+          <tr><td>Load C</td><td>AC = C</td><td>AC = C</td></tr>
+          <tr><td>Add D</td><td>AC = AC + D</td><td>AC = C+D</td></tr>
+          <tr><td>Multiply M[T]</td><td>AC = AC × M[T]</td><td>AC = (A+B)*(C+D)</td></tr>
+          <tr><td>Store X</td><td>M[X] = AC</td><td>Final result stored</td></tr>
+        </table></div>
+        <div class="highlight-box">Total: 8 instructions · Uses: Accumulator (implied) · Simple design but accumulator can become a bottleneck</div>
+      </div></div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="q-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-cao">Q4</span>
+          <span class="q-title">Differentiate between Two Address & Three Address Instruction Format</span>
+        </div>
+        <span class="q-marks marks-4">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Two Address Format</h3>
+        <p>Specifies TWO address fields. Result usually overwrites one source operand. Common in commercial computers.</p>
+        <div class="code-block">[ OPCODE | Destination | Source | mode ]</div>
+        <h3>Three Address Format</h3>
+        <p>Specifies THREE address fields. Result stored separately. Programs are shortest in size but instruction bits increase.</p>
+        <div class="code-block">[ OPCODE | Destination | Source1 | Source2 | mode ]</div>
+        <h3>Comparison Table</h3>
+        <div class="table-wrap"><table>
+          <tr><th>Feature</th><th>Two Address</th><th>Three Address</th></tr>
+          <tr><td>Address fields</td><td>2</td><td>3</td></tr>
+          <tr><td>Instruction size</td><td>Medium</td><td>Largest</td></tr>
+          <tr><td>Program length</td><td>Medium</td><td>Shortest</td></tr>
+          <tr><td>Flexibility</td><td>Good</td><td>Best</td></tr>
+          <tr><td>Result storage</td><td>Overwrites source</td><td>Stored separately</td></tr>
+          <tr><td>Hardware cost</td><td>Medium</td><td>Highest</td></tr>
+        </table></div>
+        <h3>Example for X=(A+B)*(C+D)</h3>
+        <div class="highlight-box">
+          <strong>Two Address:</strong> R1←A, R1←R1+B, M[T]←R1, R2←C, R2←R2+D, R1←R1*M[T], M[X]←R1 (8 instructions)<br><br>
+          <strong>Three Address:</strong> ADD R1,A,B → MUL X,R1,... (fewer, more direct instructions)
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="q-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-cao">Q5</span>
+          <span class="q-title">Elaborate the main hardware components of the processor</span>
+        </div>
+        <span class="q-marks marks-4">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Main Hardware Components</h3>
+        <div class="table-wrap"><table>
+          <tr><th>Component</th><th>Function</th></tr>
+          <tr><td><strong>ALU</strong></td><td>Performs arithmetic and logic operations</td></tr>
+          <tr><td><strong>Register File</strong></td><td>Set of general-purpose registers (R0, R1, … Rn-1) for fast data storage</td></tr>
+          <tr><td><strong>PC (Program Counter)</strong></td><td>Holds address of next instruction to fetch</td></tr>
+          <tr><td><strong>IR (Instruction Register)</strong></td><td>Holds the instruction currently being decoded/executed</td></tr>
+          <tr><td><strong>Control Circuitry</strong></td><td>Decodes IR and generates control signals for all units</td></tr>
+          <tr><td><strong>Processor-Memory Interface</strong></td><td>Manages data transfer between processor and main memory</td></tr>
+          <tr><td><strong>Instruction Address Generator</strong></td><td>Updates PC after each fetch</td></tr>
+        </table></div>
+        <h3>Execution Steps (5-stage RISC)</h3>
+        <div class="code-block">
+Stage 1: Fetch instruction from memory, increment PC
+Stage 2: Decode instruction, read source registers
+Stage 3: Compute effective address or ALU operation
+Stage 4: Read/Write memory (if needed)
+Stage 5: Write result to destination register</div>
+      </div></div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="q-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-cao">Q6</span>
+          <span class="q-title">State advantages of Zero, One, Two and Three address instruction format</span>
+        </div>
+        <span class="q-marks marks-4">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Zero Address — Advantages</h3>
+        <ul>
+          <li>Reduced instruction set — simpler CPU design</li>
+          <li>Less decoding complexity</li>
+          <li>Efficient for nested/recursive operations</li>
+          <li>Fewer bits needed (no address field)</li>
+        </ul>
+        <h3>One Address — Advantages</h3>
+        <ul>
+          <li>Balance between simplicity and versatility</li>
+          <li>Simpler operand fetching (only one explicit operand)</li>
+          <li>Good code density — smaller program size vs 2/3 address</li>
+          <li>Implicit accumulator speeds up some operations</li>
+        </ul>
+        <h3>Two Address — Advantages</h3>
+        <ul>
+          <li>Allows direct operation on memory or registers</li>
+          <li>More flexible than one address</li>
+          <li>Intermediate results can be stored directly</li>
+          <li>Better performance — fewer memory accesses</li>
+        </ul>
+        <h3>Three Address — Advantages</h3>
+        <ul>
+          <li>Direct representation of complex expressions</li>
+          <li>Shortest program length (fewest instructions)</li>
+          <li>Supports parallelism — multiple operands fetched simultaneously</li>
+          <li>Better pipeline utilization and register allocation</li>
+        </ul>
+      </div></div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="q-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-cao">Q7</span>
+          <span class="q-title">Discuss limitations of Zero, One, Two and Three address instruction format</span>
+        </div>
+        <span class="q-marks marks-4">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Zero Address — Limitations</h3>
+        <ul>
+          <li>Heavy stack dependency causes access inefficiency</li>
+          <li>Frequent PUSH/POP operations hurt performance</li>
+          <li>Difficult to optimize — operand access is implicit</li>
+          <li>Harder to debug than register-based operations</li>
+        </ul>
+        <h3>One Address — Limitations</h3>
+        <ul>
+          <li>Accumulator bottleneck — reduces parallelism</li>
+          <li>More instructions needed for complex operations</li>
+          <li>Extra data movement between memory and accumulator</li>
+        </ul>
+        <h3>Two Address — Limitations</h3>
+        <ul>
+          <li>Result overwrites source operand — needs extra instructions to preserve data</li>
+          <li>Larger instruction size than 0/1 address</li>
+          <li>More decoding complexity</li>
+        </ul>
+        <h3>Three Address — Limitations</h3>
+        <ul>
+          <li>Largest instruction size — more memory per instruction</li>
+          <li>Complex instruction decoding — affects performance</li>
+          <li>Higher hardware cost and power consumption</li>
+          <li>Longer operand fetch time</li>
+        </ul>
+      </div></div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="q-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-cao">Q8</span>
+          <span class="q-title">Describe Single Bus Organization in detail</span>
+        </div>
+        <span class="q-marks marks-4">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <p>Already covered in Unit 1 Q4 — Single Bus Architecture! This is the same question. Refer to Q4 above for complete answer. 🌸</p>
+        <div class="highlight-box">Key points to repeat: What is single bus · Components (MAR, MDR, Y, Z, TEMP, MUX) · Register transfer mechanism (Riin/Riout) · Advantage (simple) · Disadvantage (slow — 1 transfer/cycle)</div>
+      </div></div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="q-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-cao">Q9</span>
+          <span class="q-title">Explain Multi-Bus Organization in detail</span>
+        </div>
+        <span class="q-marks marks-4">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>Why Multi-Bus?</h3>
+        <p>Single bus is slow (only 1 transfer per clock). Multi-bus provides <strong>multiple internal paths</strong> enabling several transfers in parallel → significantly faster!</p>
+        <h3>Three-Bus Structure</h3>
+        <div class="code-block">
+Bus A ──────────────────────────────────────────►
+Bus B ──────────────────────────────────────────►  } to ALU inputs
+Bus C ◄─────────────────────────────────────────── ALU output
+
+Register file has 3 PORTS:
+  Port A → output to Bus A  (source operand 1)
+  Port B → output to Bus B  (source operand 2)
+  Port C → input from Bus C (destination result)</div>
+        <h3>How it Works</h3>
+        <ul>
+          <li>Bus A and B carry TWO source operands to ALU simultaneously</li>
+          <li>ALU performs operation and sends result over Bus C</li>
+          <li>All three happen in the SAME clock cycle!</li>
+          <li>No need for temporary registers Y and Z (unlike single bus)</li>
+        </ul>
+        <h3>Comparison</h3>
+        <div class="table-wrap"><table>
+          <tr><th>Feature</th><th>Single Bus</th><th>Multi-Bus</th></tr>
+          <tr><td>Transfers per cycle</td><td>1</td><td>3 simultaneously</td></tr>
+          <tr><td>Speed</td><td>Slow</td><td>Much faster</td></tr>
+          <tr><td>Cost</td><td>Low</td><td>Higher</td></tr>
+          <tr><td>Temp registers needed</td><td>Y, Z, TEMP</td><td>Not needed</td></tr>
+        </table></div>
+        <div class="highlight-box">Extra feature: <strong>Incrementer unit</strong> increments PC by 4 without using the main ALU — freeing ALU for actual computation!</div>
+      </div></div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="q-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-cao">Q10</span>
+          <span class="q-title">Write short note on Hardwired Control Unit</span>
+        </div>
+        <span class="q-marks marks-4">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>What is Hardwired Control?</h3>
+        <p>Control signals are generated by actual hardware circuits (combinational logic) that directly interpret the instruction register and timing signals. It is built into the physical circuit permanently.</p>
+        <h3>Components</h3>
+        <div class="table-wrap"><table>
+          <tr><th>Component</th><th>Role</th></tr>
+          <tr><td><strong>Step Counter</strong></td><td>Tracks which of the 5 execution steps is currently active (T1–T5)</td></tr>
+          <tr><td><strong>Instruction Decoder</strong></td><td>Reads OP-code from IR, activates corresponding INS signal</td></tr>
+          <tr><td><strong>Control Signal Generator</strong></td><td>Combinational circuit that produces control signals based on INS + T signals</td></tr>
+        </table></div>
+        <h3>How Control Signals Depend On:</h3>
+        <ul>
+          <li>Contents of the step counter (which step T1–T5)</li>
+          <li>Contents of the IR (which instruction)</li>
+          <li>Result of computation (for branch conditions)</li>
+          <li>External signals (interrupt requests)</li>
+        </ul>
+        <div class="highlight-box">✅ <strong>Advantage:</strong> Very FAST — signals generated directly by circuits<br>⚠️ <strong>Disadvantage:</strong> Inflexible — hard to modify after manufacturing</div>
+      </div></div>
+    </div>
+
+    <!-- Q11 -->
+    <div class="q-card" onclick="toggleCard(this)">
+      <div class="q-header">
+        <div class="q-title-wrap">
+          <span class="q-num num-cao">Q11</span>
+          <span class="q-title">Write Short note on Microprogrammed Control Unit</span>
+        </div>
+        <span class="q-marks marks-4">4 Marks</span>
+        <span class="q-chevron">▾</span>
+      </div>
+      <div class="q-body"><div class="q-inner">
+        <h3>What is Microprogrammed Control?</h3>
+        <p>Instead of hardware circuits, control signals are determined by a <strong>program stored in a special memory</strong> called the Control Store (microprogram memory). It's a "software" approach to control.</p>
+        <h3>Key Terms</h3>
+        <div class="table-wrap"><table>
+          <tr><th>Term</th><th>Meaning</th></tr>
+          <tr><td><strong>Microinstruction</strong></td><td>An n-bit word where each bit controls one signal for one step</td></tr>
+          <tr><td><strong>Micro routine</strong></td><td>Sequence of microinstructions that implements one machine instruction</td></tr>
+          <tr><td><strong>Control Store</strong></td><td>Small, fast memory on the processor chip that stores microinstructions</td></tr>
+          <tr><td><strong>μPC</strong></td><td>Microprogram counter — tracks which microinstruction to fetch next</td></tr>
+        </table></div>
+        <h3>How it Works</h3>
+        <div class="code-block">
+IR ──► Microinstruction Address Generator
+              ↓ μPC
+         Control Store (microprogram memory)
+              ↓
+         Microinstructions
+              ↓
+         Control Signals → hardware components</div>
+        <div class="table-wrap"><table>
+          <tr><th>Feature</th><th>Hardwired</th><th>Microprogrammed</th></tr>
+          <tr><td>Speed</td><td>Faster ✅</td><td>Slower</td></tr>
+          <tr><td>Flexibility</td><td>Rigid ❌</td><td>Flexible ✅</td></tr>
+          <tr><td>Implementation</td><td>Complex circuits</td><td>Simple, stored program</td></tr>
+          <tr><td>Used in</td><td>RISC processors</td><td>CISC processors</td></tr>
+        </table></div>
+        <div class="highlight-box">Modern trend: Since logic circuitry cost has dropped, <strong>Hardwired control is now preferred</strong> even for complex processors.</div>
+      </div></div>
+    </div>
+
+  </div><!-- end cao-u2 -->
+</div><!-- end content-cao -->
+
+<!-- ══ MATHS ══ -->
+<div class="content" id="content-math">
+  <div class="subject-header">
+    <div class="subject-icon icon-math">📐</div>
+    <div class="subject-header-text">
+      <h2 style="color:var(--math)">Applied Mathematics — II</h2>
+      <p>AM-II · Units covered so far: Coming soon as you study!</p>
+    </div>
+  </div>
+  <div class="coming-soon-card">
+    <div class="cs-icon">📐</div>
+    <h3>Maths content coming soon!</h3>
+    <p>Complete your Maths sessions and we'll add all the answers here unit by unit 💗</p>
+  </div>
+</div>
+
+<!-- ══ PYTHON ══ -->
+<div class="content" id="content-python">
+  <div class="subject-header">
+    <div class="subject-icon icon-python">🐍</div>
+    <div class="subject-header-text">
+      <h2 style="color:var(--python)">Python Programming</h2>
+      <p>Units covered so far: Coming soon as you study!</p>
+    </div>
+  </div>
+  <div class="coming-soon-card">
+    <div class="cs-icon">🐍</div>
+    <h3>Python content coming soon!</h3>
+    <p>Complete your Python sessions and we'll add all the answers here unit by unit 💗</p>
+  </div>
+</div>
+
+<!-- ══ PHYSICS ══ -->
+<div class="content" id="content-physics">
+  <div class="subject-header">
+    <div class="subject-icon icon-physics">⚛️</div>
+    <div class="subject-header-text">
+      <h2 style="color:var(--physics)">Engineering Physics</h2>
+      <p>Units covered so far: Coming soon as you study!</p>
+    </div>
+  </div>
+  <div class="coming-soon-card">
+    <div class="cs-icon">⚛️</div>
+    <h3>Physics content coming soon!</h3>
+    <p>Complete your Physics sessions and we'll add all the answers here unit by unit 💗</p>
+  </div>
+</div>
+
+<script>
+  function showSubject(sub) {
+    document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => {
+      t.className = 'nav-tab';
+    });
+    document.getElementById('content-' + sub).classList.add('active');
+    const tab = document.getElementById('tab-' + sub);
+    tab.classList.add('active-' + sub);
+  }
+
+  function showUnit(subj, unit) {
+    const content = document.getElementById('content-' + subj);
+    content.querySelectorAll('.unit-content').forEach(u => u.classList.remove('active'));
+    content.querySelectorAll('.unit-tab').forEach(t => {
+      t.classList.remove('active');
+      ['cao','math','python','physics'].forEach(s => t.classList.remove(s));
+    });
+    document.getElementById(subj + '-' + unit).classList.add('active');
+    event.target.classList.add('active', subj);
+  }
+
+  function toggleCard(card) {
+    card.classList.toggle('open');
+  }
+
+  function scrollToContent() {
+    document.getElementById('mainnav').scrollIntoView({ behavior: 'smooth' });
+    return false;
+  }
+
+  // Animate progress bars on load
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.prog-fill').forEach(bar => {
+      const w = bar.style.width;
+      bar.style.width = '0';
+      setTimeout(() => bar.style.width = w, 300);
+    });
+  });
+</script>
+</body>
+</html>
