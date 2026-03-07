@@ -7,26 +7,34 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #03080f;
-    --surface: #071524;
-    --card: #091d30;
-    --border: rgba(80,160,255,0.13);
+    /* ── f college green palette (from coolors) ── */
+    /* #22d3ee cyan · #4fffb0 mint · #0eea52 electric · #0ebb68 emerald · #1a4a3a forest */
+    --bg: #060f0b;
+    --surface: #0a1a12;
+    --card: #0c2018;
+    --border: rgba(14,234,82,0.13);
     --cao: #7ab8ff;
     --cao-glow: rgba(80,150,255,0.16);
-    --math: #3effa0;
-    --math-glow: rgba(40,255,150,0.16);
-    --python: #30eeff;
-    --python-glow: rgba(30,230,255,0.16);
-    --physics: #aaff44;
-    --physics-glow: rgba(160,255,50,0.16);
-    --text: #cce8ff;
-    --muted: #4a7a9a;
+    --math: #4fffb0;
+    --math-glow: rgba(79,255,176,0.16);
+    --python: #22d3ee;
+    --python-glow: rgba(34,211,238,0.16);
+    --physics: #0eea52;
+    --physics-glow: rgba(14,234,82,0.16);
+    --text: #d0fff0;
+    --muted: #3a7a58;
     --white: #ffffff;
-    --glass: rgba(8,28,52,0.62);
-    --glass-border: rgba(100,180,255,0.14);
-    --glass-top: rgba(255,255,255,0.08);
-    --glass-shine: rgba(255,255,255,0.13);
-    --aero-glow: 0 0 24px rgba(40,130,255,0.22), 0 2px 8px rgba(0,0,0,0.6);
+    --glass: rgba(6,22,14,0.65);
+    --glass-border: rgba(14,187,104,0.16);
+    --glass-top: rgba(255,255,255,0.07);
+    --glass-shine: rgba(79,255,176,0.10);
+    --aero-glow: 0 0 24px rgba(14,187,104,0.18), 0 2px 8px rgba(0,0,0,0.65);
+    /* green accent shorthands */
+    --g1: #22d3ee;
+    --g2: #4fffb0;
+    --g3: #0eea52;
+    --g4: #0ebb68;
+    --g5: #1a4a3a;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -34,13 +42,13 @@
   /* ── SCROLLBAR — always visible, stops flash ── */
   html { overflow-y: scroll; }
   ::-webkit-scrollbar { width: 8px; }
-  ::-webkit-scrollbar-track { background: #030810; }
+  ::-webkit-scrollbar-track { background: #040d07; }
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, rgba(80,160,255,0.5), rgba(20,80,180,0.5));
+    background: linear-gradient(180deg, rgba(14,234,82,0.5), rgba(14,187,104,0.5));
     border-radius: 4px;
-    border: 1px solid rgba(100,180,255,0.2);
+    border: 1px solid rgba(14,187,104,0.2);
   }
-  ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, rgba(100,180,255,0.7), rgba(40,100,200,0.7)); }
+  ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, rgba(79,255,176,0.7), rgba(14,187,104,0.7)); }
 
   body {
     font-family: 'DM Sans', sans-serif;
@@ -50,9 +58,9 @@
     overflow-x: hidden;
     /* deep space-blue Aero background */
     background-image:
-      radial-gradient(ellipse 80% 60% at 20% 10%, rgba(20,80,180,0.18) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 50% at 80% 80%, rgba(10,60,140,0.14) 0%, transparent 55%),
-      radial-gradient(ellipse 100% 80% at 50% 50%, rgba(5,20,50,0.8) 0%, transparent 100%);
+      radial-gradient(ellipse 80% 60% at 20% 10%, rgba(10,120,60,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 80%, rgba(5,90,45,0.14) 0%, transparent 55%),
+      radial-gradient(ellipse 100% 80% at 50% 50%, rgba(3,14,8,0.8) 0%, transparent 100%);
   }
 
   /* ── GRAIN OVERLAY ── */
@@ -69,7 +77,7 @@
     backdrop-filter: blur(18px) saturate(1.6);
     -webkit-backdrop-filter: blur(18px) saturate(1.6);
     border: 1px solid var(--glass-border);
-    border-top-color: rgba(180,220,255,0.18);
+    border-top-color: rgba(79,255,176,0.12);
     box-shadow: var(--aero-glow), inset 0 1px 0 var(--glass-top);
   }
 
@@ -94,18 +102,18 @@
 
   .badge {
     display: inline-flex; align-items: center; gap: 0.5rem;
-    background: rgba(20,70,150,0.45);
-    border: 1px solid rgba(100,180,255,0.3);
-    border-top-color: rgba(180,220,255,0.45);
+    background: rgba(10,80,40,0.55);
+    border: 1px solid rgba(14,187,104,0.3);
+    border-top-color: rgba(79,255,176,0.45);
     border-radius: 100px;
     padding: 0.4rem 1.2rem;
     font-size: 0.8rem; font-weight: 500;
-    color: #90c8ff;
+    color: #4fffb0;
     margin-bottom: 2rem;
     animation: fadeUp 0.6s ease both;
     letter-spacing: 0.05em;
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 16px rgba(40,120,255,0.18), inset 0 1px 0 rgba(255,255,255,0.12);
+    box-shadow: 0 0 16px rgba(14,187,104,0.22), inset 0 1px 0 rgba(255,255,255,0.12);
   }
 
   .hero h1 {
@@ -117,8 +125,8 @@
     letter-spacing: -0.01em;
     animation: fadeUp 0.7s ease 0.1s both;
     /* crisp white Aero text with glow */
-    color: #e8f4ff;
-    text-shadow: 0 0 40px rgba(80,160,255,0.4), 0 2px 4px rgba(0,0,0,0.8);
+    color: #e0fff4;
+    text-shadow: 0 0 40px rgba(14,234,82,0.35), 0 2px 4px rgba(0,0,0,0.8);
   }
 
   .hero h1 span.grad-cao { background: linear-gradient(135deg, #90c8ff, #c0dcff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 12px rgba(100,180,255,0.6)); }
@@ -127,7 +135,7 @@
   .hero h1 span.grad-physics { background: linear-gradient(135deg, #aaff44, #d8ff99); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 12px rgba(160,255,50,0.6)); }
 
   .hero p {
-    font-size: 1.1rem; color: #6090b0; max-width: 520px;
+    font-size: 1.1rem; color: #2a6645; max-width: 520px;
     line-height: 1.7; margin-bottom: 2.5rem;
     animation: fadeUp 0.7s ease 0.2s both;
   }
@@ -203,7 +211,7 @@
 
   .scroll-hint {
     display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-    color: #2a5070; font-size: 0.78rem; letter-spacing: 0.08em;
+    color: #1a5038; font-size: 0.78rem; letter-spacing: 0.08em;
     animation: fadeUp 0.7s ease 0.5s both;
   }
   .scroll-arrow { animation: bounce 1.6s infinite; display: inline-block; }
@@ -212,11 +220,11 @@
   /* ── AERO NAV BAR ── */
   nav {
     position: sticky; top: 0; z-index: 100;
-    background: rgba(5,18,40,0.72);
+    background: rgba(4,14,9,0.78);
     backdrop-filter: blur(24px) saturate(1.8);
     -webkit-backdrop-filter: blur(24px) saturate(1.8);
-    border-bottom: 1px solid rgba(80,160,255,0.18);
-    box-shadow: 0 1px 0 rgba(180,220,255,0.08), 0 4px 24px rgba(0,0,0,0.5);
+    border-bottom: 1px solid rgba(14,187,104,0.2);
+    box-shadow: 0 1px 0 rgba(79,255,176,0.07), 0 4px 24px rgba(0,0,0,0.5);
     padding: 0.8rem 2rem;
     display: flex; align-items: center; justify-content: space-between;
     gap: 1rem;
@@ -224,8 +232,8 @@
   .nav-logo {
     font-family: 'Dela Gothic One', 'Syne', sans-serif;
     font-size: 1rem; font-weight: 400;
-    color: #8ac8ff;
-    text-shadow: 0 0 16px rgba(80,160,255,0.6);
+    color: #4fffb0;
+    text-shadow: 0 0 16px rgba(14,234,82,0.5);
     white-space: nowrap;
   }
   .nav-tabs { display: flex; gap: 0.3rem; list-style: none; overflow-x: auto; }
@@ -244,8 +252,8 @@
       rgba(255,255,255,0.06) 0%,
       rgba(255,255,255,0.01) 50%,
       rgba(0,0,0,0.12) 100%);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-top-color: rgba(255,255,255,0.13);
+    border: 1px solid rgba(14,187,104,0.1);
+    border-top-color: rgba(79,255,176,0.16);
     color: var(--muted);
   }
   .nav-tab::before, .unit-tab::before, .learn-unit-btn::before {
@@ -258,8 +266,8 @@
   .nav-tab:hover:not(:disabled), .unit-tab:hover:not(.coming), .learn-unit-btn:hover:not(:disabled) {
     background: linear-gradient(180deg, rgba(255,255,255,0.11) 0%, rgba(255,255,255,0.03) 50%, rgba(0,0,0,0.06) 100%);
     border-color: rgba(255,255,255,0.16);
-    border-top-color: rgba(255,255,255,0.24);
-    color: var(--text);
+    border-top-color: rgba(79,255,176,0.25);
+    color: #d0fff0;
     transform: translateY(-1px);
   }
   .nav-tab:active, .unit-tab:active:not(.coming), .learn-unit-btn:active:not(:disabled) {
@@ -333,8 +341,8 @@
     display: flex; align-items: center; justify-content: center;
     font-size: 1.5rem;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-top-color: rgba(255,255,255,0.22);
+    border: 1px solid rgba(79,255,176,0.15);
+    border-top-color: rgba(79,255,176,0.28);
     box-shadow: var(--aero-glow), inset 0 1px 0 rgba(255,255,255,0.15);
   }
   .icon-cao { background: linear-gradient(145deg, rgba(50,110,240,0.55), rgba(20,65,190,0.75)); }
@@ -345,25 +353,25 @@
   .subject-header h2 {
     font-family: 'Dela Gothic One', 'Syne', sans-serif;
     font-size: 1.6rem; font-weight: 400;
-    color: #d8eeff;
-    text-shadow: 0 0 20px rgba(80,160,255,0.35);
+    color: #d0fff0;
+    text-shadow: 0 0 20px rgba(14,187,104,0.3);
   }
 
   .unit-tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
 
   /* ── AERO QUESTION CARDS ── */
   .q-card {
-    background: linear-gradient(160deg, rgba(12,32,58,0.7) 0%, rgba(8,22,42,0.8) 100%);
+    background: linear-gradient(160deg, rgba(8,28,18,0.72) 0%, rgba(5,18,10,0.82) 100%);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(60,140,255,0.12);
-    border-top-color: rgba(140,200,255,0.18);
+    border: 1px solid rgba(14,187,104,0.12);
+    border-top-color: rgba(79,255,176,0.18);
     border-radius: 14px;
     margin-bottom: 1rem;
     overflow: hidden;
     transition: border-color 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.45), inset 0 1px 0 rgba(79,255,176,0.03);
   }
-  .q-card:hover { border-color: rgba(80,160,255,0.3); box-shadow: 0 0 20px rgba(40,120,255,0.18), 0 4px 16px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06); }
+  .q-card:hover { border-color: rgba(14,234,82,0.3); box-shadow: 0 0 20px rgba(14,187,104,0.18), 0 4px 16px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06); }
   .q-card.math-card:hover { border-color: rgba(40,220,110,0.3); box-shadow: 0 0 20px rgba(30,200,90,0.18), 0 4px 16px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06); }
   .q-card.python-card:hover { border-color: rgba(0,210,225,0.3); box-shadow: 0 0 20px rgba(0,200,220,0.18), 0 4px 16px rgba(0,0,0,0.5); }
   .q-card.physics-card:hover { border-color: rgba(140,235,25,0.3); box-shadow: 0 0 20px rgba(120,220,20,0.18), 0 4px 16px rgba(0,0,0,0.5); }
@@ -381,8 +389,8 @@
     width: 30px; height: 30px; border-radius: 8px;
     display: flex; align-items: center; justify-content: center;
     font-size: 0.72rem; font-weight: 700; flex-shrink: 0;
-    border: 1px solid rgba(255,255,255,0.08);
-    border-top-color: rgba(255,255,255,0.18);
+    border: 1px solid rgba(14,187,104,0.12);
+    border-top-color: rgba(79,255,176,0.2);
     backdrop-filter: blur(6px);
   }
   .num-cao   { background: linear-gradient(145deg,rgba(50,110,240,0.5),rgba(20,65,185,0.7)); color:#b8d8ff; box-shadow: 0 0 10px rgba(60,120,255,0.3); }
@@ -390,7 +398,7 @@
   .num-python{ background: linear-gradient(145deg,rgba(0,175,188,0.5),rgba(0,125,138,0.7)); color:#a0f5ff; box-shadow: 0 0 10px rgba(0,200,215,0.3); }
   .num-physics{background: linear-gradient(145deg,rgba(105,205,8,0.45),rgba(65,148,0,0.7)); color:#d8ff90; box-shadow: 0 0 10px rgba(130,220,15,0.3); }
 
-  .q-title { font-size: 0.9rem; font-weight: 500; line-height: 1.45; color: #a8c8e0; flex: 1; min-width: 0; }
+  .q-title { font-size: 0.9rem; font-weight: 500; line-height: 1.45; color: #7acca0; flex: 1; min-width: 0; }
   .q-marks {
     font-size: 0.72rem; font-weight: 700; padding: 0.25rem 0.65rem;
     border-radius: 20px; flex-shrink: 0;
@@ -405,16 +413,16 @@
   .q-inner { padding: 0 1.2rem 1.2rem; }
   .q-inner h3 {
     font-family: 'Syne', sans-serif; font-size: 0.82rem; font-weight: 700;
-    color: #5a8aaa; text-transform: uppercase; letter-spacing: 0.06em;
+    color: #2a7a50; text-transform: uppercase; letter-spacing: 0.06em;
     margin: 1rem 0 0.5rem;
   }
 
   /* ── AERO CODE BLOCK ── */
   .code-block {
-    background: rgba(2,10,22,0.75);
+    background: rgba(2,12,6,0.8);
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(60,140,255,0.14);
-    border-top-color: rgba(120,190,255,0.2);
+    border: 1px solid rgba(14,187,104,0.14);
+    border-top-color: rgba(79,255,176,0.2);
     border-radius: 10px;
     padding: 1rem 1.2rem;
     font-family: 'Courier New', monospace;
@@ -424,42 +432,42 @@
     overflow-x: auto;
     margin: 0.7rem 0;
     white-space: pre;
-    box-shadow: inset 0 2px 8px rgba(0,0,0,0.4), 0 0 12px rgba(40,120,255,0.08);
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.4), 0 0 12px rgba(14,187,104,0.08);
   }
 
   /* ── AERO TABLE ── */
   .table-wrap {
     overflow-x: auto; margin: 0.7rem 0;
     border-radius: 10px;
-    border: 1px solid rgba(60,140,255,0.15);
-    border-top-color: rgba(140,200,255,0.2);
-    background: rgba(5,15,35,0.5);
+    border: 1px solid rgba(14,187,104,0.15);
+    border-top-color: rgba(79,255,176,0.2);
+    background: rgba(4,14,8,0.5);
     backdrop-filter: blur(8px);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
   }
   table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
   th {
-    background: linear-gradient(180deg, rgba(30,80,190,0.45) 0%, rgba(18,55,155,0.6) 100%);
-    color: #90c8ff; font-weight: 600; padding: 0.65rem 0.9rem;
+    background: linear-gradient(180deg, rgba(14,100,50,0.45) 0%, rgba(10,70,35,0.6) 100%);
+    color: #4fffb0; font-weight: 600; padding: 0.65rem 0.9rem;
     text-align: left; font-size: 0.8rem; letter-spacing: 0.03em;
-    border-bottom: 1px solid rgba(80,160,255,0.2);
-    text-shadow: 0 0 8px rgba(100,180,255,0.5);
+    border-bottom: 1px solid rgba(14,187,104,0.2);
+    text-shadow: 0 0 8px rgba(79,255,176,0.5);
   }
-  td { padding: 0.6rem 0.9rem; border-bottom: 1px solid rgba(40,80,140,0.25); color: #a0c8e0; }
+  td { padding: 0.6rem 0.9rem; border-bottom: 1px solid rgba(40,80,140,0.25); color: #7abf98; }
   tr:last-child td { border-bottom: none; }
-  tr:hover td { background: rgba(40,100,200,0.08); }
+  tr:hover td { background: rgba(14,187,104,0.07); }
 
   /* ── AERO HIGHLIGHT & TIP BOXES ── */
   .highlight-box {
-    background: rgba(20,60,140,0.3);
+    background: rgba(10,60,30,0.35);
     backdrop-filter: blur(6px);
-    border: 1px solid rgba(80,160,255,0.2);
-    border-top-color: rgba(140,200,255,0.28);
+    border: 1px solid rgba(14,187,104,0.2);
+    border-top-color: rgba(79,255,176,0.28);
     border-radius: 10px;
     padding: 0.9rem 1.1rem;
     margin: 0.7rem 0;
-    font-size: 0.88rem; line-height: 1.65; color: #b0d8f8;
-    box-shadow: 0 0 12px rgba(40,120,255,0.1), inset 0 1px 0 rgba(255,255,255,0.06);
+    font-size: 0.88rem; line-height: 1.65; color: #9affd0;
+    box-shadow: 0 0 12px rgba(14,187,104,0.1), inset 0 1px 0 rgba(255,255,255,0.06);
   }
   .math-card .highlight-box {
     background: rgba(10,80,45,0.3);
@@ -480,10 +488,10 @@
 
   /* ── AERO PROGRESS SECTION ── */
   .progress-section {
-    background: linear-gradient(160deg, rgba(10,28,55,0.65) 0%, rgba(7,20,42,0.75) 100%);
+    background: linear-gradient(160deg, rgba(8,26,16,0.68) 0%, rgba(5,18,10,0.78) 100%);
     backdrop-filter: blur(14px);
-    border: 1px solid rgba(60,140,255,0.13);
-    border-top-color: rgba(140,200,255,0.2);
+    border: 1px solid rgba(14,187,104,0.13);
+    border-top-color: rgba(79,255,176,0.2);
     border-radius: 16px;
     padding: 1.5rem;
     margin-bottom: 2rem;
@@ -491,10 +499,10 @@
   }
   .progress-section h3 {
     font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 700;
-    color: #4a7a9a; margin-bottom: 1.2rem; text-transform: uppercase; letter-spacing: 0.05em;
+    color: #2a6a48; margin-bottom: 1.2rem; text-transform: uppercase; letter-spacing: 0.05em;
   }
   .prog-item { margin-bottom: 1rem; }
-  .prog-label { display: flex; justify-content: space-between; font-size: 0.82rem; color: #6090b0; margin-bottom: 0.4rem; }
+  .prog-label { display: flex; justify-content: space-between; font-size: 0.82rem; color: #2a6a48; margin-bottom: 0.4rem; }
   .prog-bar {
     height: 6px; border-radius: 3px;
     background: rgba(255,255,255,0.05);
@@ -509,10 +517,10 @@
 
   /* ── AERO LEARN SECTION ── */
   .learn-section {
-    background: linear-gradient(160deg, rgba(10,28,55,0.65) 0%, rgba(7,20,42,0.75) 100%);
+    background: linear-gradient(160deg, rgba(8,26,16,0.68) 0%, rgba(5,18,10,0.78) 100%);
     backdrop-filter: blur(14px);
-    border: 1px solid rgba(60,140,255,0.13);
-    border-top-color: rgba(140,200,255,0.2);
+    border: 1px solid rgba(14,187,104,0.13);
+    border-top-color: rgba(79,255,176,0.2);
     border-radius: 16px;
     padding: 1.5rem;
     margin-bottom: 2rem;
@@ -521,7 +529,7 @@
   .learn-section h3 {
     font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700;
     margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;
-    color: #6090b0;
+    color: #2a6a48;
   }
   .learn-unit-tabs { display: flex; gap: 0.4rem; margin-bottom: 1.2rem; flex-wrap: wrap; }
   .learn-unit-content { display: none; }
@@ -530,27 +538,27 @@
   .learn-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.75rem; }
   .learn-card {
     display: flex; align-items: flex-start; gap: 0.75rem;
-    background: rgba(8,25,52,0.6);
+    background: rgba(5,22,12,0.65);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(60,140,255,0.12);
-    border-top-color: rgba(140,200,255,0.18);
+    border: 1px solid rgba(14,187,104,0.12);
+    border-top-color: rgba(79,255,176,0.18);
     border-radius: 12px; padding: 0.85rem 1rem;
     text-decoration: none;
     transition: all 0.2s; cursor: pointer;
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
   }
   .learn-card:hover {
-    background: rgba(15,40,80,0.7);
-    border-color: rgba(80,170,255,0.3);
+    background: rgba(8,36,18,0.75);
+    border-color: rgba(14,234,82,0.3);
     transform: translateY(-2px);
-    box-shadow: 0 0 16px rgba(40,130,255,0.2), inset 0 1px 0 rgba(255,255,255,0.07);
+    box-shadow: 0 0 16px rgba(14,187,104,0.2), inset 0 1px 0 rgba(255,255,255,0.07);
   }
   .learn-card-icon { font-size: 1.4rem; flex-shrink: 0; }
   .learn-card-text { flex: 1; min-width: 0; }
-  .learn-card-title { font-size: 0.85rem; font-weight: 600; color: #90c0e0; margin-bottom: 0.2rem; }
-  .learn-card-sub { font-size: 0.75rem; color: #3a6a88; }
-  .learn-card-arrow { color: #3a6a88; font-size: 0.9rem; flex-shrink: 0; align-self: center; transition: transform 0.2s; }
-  .learn-card:hover .learn-card-arrow { transform: translate(2px,-2px); color: #7ab8ff; }
+  .learn-card-title { font-size: 0.85rem; font-weight: 600; color: #4dcc88; margin-bottom: 0.2rem; }
+  .learn-card-sub { font-size: 0.75rem; color: #1a5a38; }
+  .learn-card-arrow { color: #1a5a38; font-size: 0.9rem; flex-shrink: 0; align-self: center; transition: transform 0.2s; }
+  .learn-card:hover .learn-card-arrow { transform: translate(2px,-2px); color: #4fffb0; }
 
   /* ── AERO YT LINK ── */
   .yt-link {
@@ -579,25 +587,25 @@
 
   /* ── COMING SOON CARD ── */
   .coming-soon-card {
-    background: rgba(8,20,40,0.5);
+    background: rgba(5,18,10,0.5);
     backdrop-filter: blur(10px);
-    border: 1px dashed rgba(60,140,255,0.18);
+    border: 1px dashed rgba(14,187,104,0.2);
     border-radius: 16px; padding: 3rem 2rem;
     text-align: center; color: var(--muted);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
   }
   .coming-soon-card .cs-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-  .coming-soon-card h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: #3a6080; }
-  .coming-soon-card p { font-size: 0.85rem; color: #2a4060; }
+  .coming-soon-card h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: #1a5a38; }
+  .coming-soon-card p { font-size: 0.85rem; color: #0f3822; }
 
   /* ── DEF LINK ── */
   .def-link {
     display: inline-flex; align-items: center; gap: 0.4rem;
-    font-size: 0.8rem; color: #5a90c0;
-    border-bottom: 1px dashed rgba(80,160,255,0.35);
+    font-size: 0.8rem; color: #2a8050;
+    border-bottom: 1px dashed rgba(14,187,104,0.35);
     text-decoration: none; transition: color 0.2s;
   }
-  .def-link:hover { color: #90c8ff; border-bottom-color: rgba(120,190,255,0.6); }
+  .def-link:hover { color: #4fffb0; border-bottom-color: rgba(79,255,176,0.6); }
 
   /* ── ANIMATIONS ── */
   @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
