@@ -398,8 +398,10 @@
   .q-chevron { color: var(--muted); font-size: 1rem; transition: transform 0.25s; flex-shrink: 0; }
   .q-card.open .q-chevron { transform: rotate(180deg); }
 
-  .q-body { display: none; }
-  .q-body.open { display: block; animation: fadeUp 0.22s ease both; }
+  .unit-content { display: none; }
+  .unit-content.active { display: block; }
+  .q-body { display: none !important; }
+  .q-card.open .q-body { display: block !important; animation: fadeUp 0.22s ease both; }
   .q-inner { padding: 0 1.2rem 1.2rem; }
   .q-inner h3 {
     font-family: 'Syne', sans-serif; font-size: 0.82rem; font-weight: 700;
